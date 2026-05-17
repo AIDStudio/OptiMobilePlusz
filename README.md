@@ -41,7 +41,7 @@
 **OptiMobilePlusz – End User License Agreement & Terms of Use**
 
 1. **Ownership and Source Code:**
-OptiMobilePlusz (hereinafter: "Mod") is the exclusive intellectual property of the creator (**AidStudio**). The Mod is **CLOSED SOURCE**. Decompilation, reverse engineering, modification, or incorporating any part of the Mod into other projects is strictly PROHIBITED.
+OptiMobilePlusz (hereinafter: "Mod") is the exclusive intellectual property of the creator (**AidStudio**). The Mod is **OPEN SOURCE**. Decompilation, reverse engineering, modification, or incorporating any part of the Mod into other projects is strictly PROHIBITED.
 
 2. **Distribution Restrictions:**
 Uploading or distributing the Mod files (.jar) to any other website, hosting service, or social platform without the creator's explicit permission is not allowed. The Mod may only be downloaded through official CurseForge and Modrinth pages.
