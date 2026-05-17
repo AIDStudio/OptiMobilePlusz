@@ -28,41 +28,14 @@ public class OptiZoomMixin {
      * Ez a metódus felel a FOV (látómező) tényleges módosításáért.
      * Csak leolvassa a ZoomState-et, nem módosítja azt.
      */
-    @Inject(method = "getFov", at = @At("RETURN"), cancellable = true)
-    private void onGetFov(CallbackInfoReturnable<Double> cir) {
+    @Inject(method = "getFov(Lnet/minecraft/client/render/Camera;FZ)F", at = @At("RETURN"), cancellable = true, require = 0)
+    private void onGetFov(CallbackInfoReturnable<Float> cir) {
         double zoom = ZoomState.getZoomMultiplier();
         
         // Csak akkor módosítjuk a visszatérési értéket, ha van aktív zoom
         if (zoom > 1.0) {
-            double originalFov = cir.getReturnValue();
-            cir.setReturnValue(originalFov / zoom);
+            float originalFov = cir.getReturnValue();
+            cir.setReturnValue(originalFov / (float) zoom);
         }
-    }
-
-    /**
-     * A kliens frissítési ciklusában (tick) számoljuk ki az aktuális zoom mértékét.
-     * Így elkerüljük a getFov-on belüli végtelen ciklusokat és felesleges számításokat.
-     */
-    @Inject(method = "tick", at = @At("HEAD"))
-    private void onTick(CallbackInfo ci) {
-        boolean isZooming = OptimobileClient.zoomKey != null && OptimobileClient.zoomKey.isPressed();
-        
-        double target = isZooming ? TARGET_ZOOM_LEVEL : 1.0;
-
-        // Lineáris interpoláció (lerp) a sima mozgáshoz
-        currentZoom = MathHelper.lerp(
-                ZOOM_SMOOTHING,
-                currentZoom,
-                target
-        );
-
-        // Ha nagyon közel vagyunk az 1.0-hoz vagy a célhoz, kerekítsük le, 
-        // hogy ne számoljon a gép feleslegesen mikroszkopikus törtszámokat.
-        if (Math.abs(currentZoom - 1.0) < 0.001) {
-            currentZoom = 1.0;
-        }
-
-        // Frissítjük a központi állapotot, amit az OptiPlayerMixin is lát
-        ZoomState.setZoomMultiplier(currentZoom);
     }
 }

@@ -1,8 +1,13 @@
 package com.optimobileplusz.client;
 
+import net.minecraft.util.math.MathHelper;
+
 public class ZoomState {
 
     private static double zoomMultiplier = 1.0;
+    private static double currentZoom = 1.0;
+    private static final double TARGET_ZOOM_LEVEL = 4.0;
+    private static final double ZOOM_SMOOTHING = 0.15;
 
     public static double getZoomMultiplier() {
         return zoomMultiplier;
@@ -10,5 +15,16 @@ public class ZoomState {
 
     public static void setZoomMultiplier(double zoom) {
         zoomMultiplier = zoom;
+    }
+
+    public static void tickZoom(boolean zooming) {
+        double target = zooming ? TARGET_ZOOM_LEVEL : 1.0;
+        currentZoom = MathHelper.lerp(ZOOM_SMOOTHING, currentZoom, target);
+
+        if (Math.abs(currentZoom - 1.0) < 0.001) {
+            currentZoom = 1.0;
+        }
+
+        setZoomMultiplier(currentZoom);
     }
 }

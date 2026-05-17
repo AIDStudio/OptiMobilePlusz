@@ -8,8 +8,8 @@ group = project.maven_group
 
 // Itt adjuk meg a letöltési forrásokat
 repositories {
-	maven { url "https://maven.terraformersmc.com/releases/" } // ModMenu helye
-	maven { url "https://maven.fabricmc.net/" }               // Fabric API helye
+	maven { url = uri("https://maven.terraformersmc.com/releases/") } // ModMenu helye
+	maven { url = uri("https://maven.fabricmc.net/") }               // Fabric API helye
 	mavenCentral()                                            // Általános Java könyvtárak
 }
 
