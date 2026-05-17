@@ -1,6 +1,9 @@
-Mod Download Link:
+\### 📥 Download & Links
 
-https://www.curseforge.com/minecraft/mc-mods/optymobileplusz
+The mod has been officially approved and is completely free to download:
+
+\* \*\*CurseForge:\*\* \[Click here to project OptiMobilePlusz\](https://www.curseforge.com/minecraft/mc-mods/optymobileplusz)
+
 
 
 # 📱 OptiMobilePlusz (v1.1 Update)
