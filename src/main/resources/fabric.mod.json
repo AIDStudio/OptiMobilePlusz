@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "optimobileplusz",
+	"version": "${version}",
+	"name": "OptiMobilePlusz",
+	"icon": "assets/optimobileplusz/icon.png",
+	"description": "OptiMobilePlusz V1.1 FPS Boost for potato mobile",
+	"authors": [
+		"AidStudio (Ody)"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.optimobileplusz.OptimobilePlusz"
+		],
+		"client": [
+			"com.optimobileplusz.client.OptimobileClient"
+		],
+		"modmenu": [
+    "com.optimobileplusz.client.OptiMobileModMenu"
+  ]
+	},
+	"mixins": [
+		"optimobileplusz.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

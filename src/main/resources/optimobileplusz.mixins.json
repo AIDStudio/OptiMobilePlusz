@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "com.optimobileplusz.client.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EntityRendererMixin",
+    "ParticleMixin",
+    "CloudMixin",
+    "LightUpdateMixin",
+    "HudMixin",
+    "SpriteContentsMixin",
+    "ChunkRenderMixin",
+    "OptiZoomMixin",
+    "OptiPlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
