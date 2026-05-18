@@ -3,7 +3,7 @@
 
 # 📱 OptiMobilePlusz (v1.1 Update)
 
-**OptiMobilePlusz** is a high-performance optimization mod specifically designed for **Minecraft 1.21.1 (Fabric)**. It is tailored for mobile devices and users utilizing **PojavLauncher** or **Zalith Launcher**. By using advanced Mixin-based bytecode injection, it forces aggressive rendering optimizations to ensure the highest possible FPS on hardware-constrained ARM devices.
+**OptiMobilePlusz** is a high-performance optimization mod specifically designed for **Minecraft 1.21.1 (Fabric)**. It is tailored for mobile devices and users utilizing **PojavLauncher** or **Zalith Launcher 2**. By using advanced Mixin-based bytecode injection, it forces aggressive rendering optimizations to ensure the highest possible FPS on hardware-constrained ARM devices.
 
 ## 📊 Test Device Performance
 * **Device**: Poco X5 5G (Snapdragon 695, 6GB RAM)

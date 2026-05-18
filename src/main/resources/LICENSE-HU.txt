@@ -1,7 +1,7 @@
 OptiMobilePlusz – Licencszerződés és Felhasználási Feltételek!
 
 1. Tulajdonjog és Forráskód:
-Az OptiMobilePlusz (a továbbiakban: "Mod") a készítő kizárólagos szellemi tulajdona. A Mod ZÁRT FORRÁSKÓDÚ. A forráskód visszafejtése (decompilation), módosítása, bármilyen részletének más projektbe való beépítése vagy a Mod újraírása szigorúan TILOS.
+Az OptiMobilePlusz (a továbbiakban: "Mod") a készítő kizárólagos szellemi tulajdona. A Mod NYÍLT FORRÁSKÓDÚ. A forráskód visszafejtése (decompilation), módosítása, bármilyen részletének más projektbe való beépítése vagy a Mod újraírása szigorúan TILOS.
 
 2. Terjesztési tilalom:
 A Mod fájljainak (.jar) bármilyen más weboldalra, tárhelyre vagy közösségi felületre történő feltöltése és terjesztése a készítő engedélye nélkül nem megengedett. A Mod kizárólag a hivatalos CurseForge és Modrinth felületeken keresztül tölthető le.
