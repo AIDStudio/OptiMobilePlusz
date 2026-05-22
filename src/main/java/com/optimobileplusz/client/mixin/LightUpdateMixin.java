@@ -1,5 +1,6 @@
 package com.optimobileplusz.client.mixin;
 
+import com.optimobileplusz.module.FrameBudgetManager;
 import net.minecraft.world.chunk.light.LightingProvider;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -12,7 +13,7 @@ public class LightUpdateMixin {
     private void limitLightUpdates(CallbackInfoReturnable<Boolean> cir) {
         // Néha "hazudunk" a játéknak, hogy nincs frissítés,
         // így nem fog minden egyes nanoszekundumban újra számolni
-        if (Math.random() > 0.5) { 
+        if (FrameBudgetManager.shouldStrongThrottleEffects() || Math.random() > 0.5) {
             cir.setReturnValue(false);
         }
     }

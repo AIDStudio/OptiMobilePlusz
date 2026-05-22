@@ -1,5 +1,6 @@
 package com.optimobileplusz.client.mixin;
 
+import com.optimobileplusz.module.EntityCulling;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.entity.EntityRenderer;
@@ -17,8 +18,13 @@ public abstract class EntityRendererMixin<T extends Entity> {
         MinecraftClient client = MinecraftClient.getInstance();
         
         // 1. Ha az entitás a saját karakterünk, azt mindenképpen rajzoljuk ki (F5 mód miatt)
-        if (entity == client.player) {
+        if (client == null || entity == client.player) {
             return; 
+        }
+
+        if (!EntityCulling.shouldRender(entity)) {
+            cir.setReturnValue(false);
+            return;
         }
 
         // 2. Ha az entitás benne van a látómezőben (Frustum), akkor hagyni kell a normál renderelést

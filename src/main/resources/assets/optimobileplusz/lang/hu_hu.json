@@ -1,4 +1,23 @@
 {
-  "key.optimobileplusz.zoom": "Zoom",
-  "category.optimobileplusz": "OptiMobilePlusz"
+  "key.optimobileplusz.zoom": "Opti Zoom",
+  "category.optimobileplusz": "OptiMobilePlusz",
+  "gui.optimobileplusz.title": "OptiMobilePlusz Beállítások",
+  "gui.optimobileplusz.description": "Kapcsold be és ki az optimalizáló modulokat.",
+  "gui.optimobileplusz.currentMode": "Aktuális mód: %s",
+  "gui.optimobileplusz.section.general": "Általános beállítások",
+  "gui.optimobileplusz.section.advanced": "Speciális teljesítmény",
+  "gui.optimobileplusz.fastClouds": "Gyors felhők: %s",
+  "gui.optimobileplusz.particles": "Részecskék: %s",
+  "gui.optimobileplusz.frameBudget": "FPS költségvetés: %s",
+  "gui.optimobileplusz.entityCulling": "Okos entitás culling: %s",
+  "gui.optimobileplusz.animationThrottle": "Animációk korlátozása: %s",
+  "gui.optimobileplusz.fpsCounter": "FPS számláló: %s",
+  "gui.optimobileplusz.reset": "Alapértékre állítás",
+  "gui.optimobileplusz.done": "Kész",
+  "gui.optimobileplusz.enabled": "BE",
+  "gui.optimobileplusz.disabled": "KI",
+  "gui.optimobileplusz.state.ULTRA": "Ultra",
+  "gui.optimobileplusz.state.BALANCED": "Kiegyensúlyozott",
+  "gui.optimobileplusz.state.PERFORMANCE": "Teljesítmény",
+  "gui.optimobileplusz.state.EXTREME": "Extrém"
 }

@@ -1,4 +1,23 @@
 {
-  "key.optimobileplusz.zoom": "Zoom",
-  "category.optimobileplusz": "OptiMobilePlusz"
+  "key.optimobileplusz.zoom": "Opti Zoom",
+  "category.optimobileplusz": "OptiMobilePlusz",
+  "gui.optimobileplusz.title": "OptiMobilePlusz Settings",
+  "gui.optimobileplusz.description": "Toggle optimization modules and performance helpers.",
+  "gui.optimobileplusz.currentMode": "Current mode: %s",
+  "gui.optimobileplusz.section.general": "General settings",
+  "gui.optimobileplusz.section.advanced": "Advanced performance",
+  "gui.optimobileplusz.fastClouds": "Fast clouds: %s",
+  "gui.optimobileplusz.particles": "Particles: %s",
+  "gui.optimobileplusz.frameBudget": "Frame budget: %s",
+  "gui.optimobileplusz.entityCulling": "Smart entity culling: %s",
+  "gui.optimobileplusz.animationThrottle": "Animation throttle: %s",
+  "gui.optimobileplusz.fpsCounter": "FPS counter: %s",
+  "gui.optimobileplusz.reset": "Reset defaults",
+  "gui.optimobileplusz.done": "Done",
+  "gui.optimobileplusz.enabled": "ON",
+  "gui.optimobileplusz.disabled": "OFF",
+  "gui.optimobileplusz.state.ULTRA": "Ultra",
+  "gui.optimobileplusz.state.BALANCED": "Balanced",
+  "gui.optimobileplusz.state.PERFORMANCE": "Performance",
+  "gui.optimobileplusz.state.EXTREME": "Extreme"
 }

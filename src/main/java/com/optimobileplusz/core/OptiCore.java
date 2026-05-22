@@ -1,21 +1,29 @@
 package com.optimobileplusz.core;
 
-import com.optimobileplusz.module.*;
+import com.optimobileplusz.module.AdaptiveEngine;
+import com.optimobileplusz.module.EntityCulling;
+import com.optimobileplusz.module.FrameBudgetManager;
+import com.optimobileplusz.module.ParticleLimiter;
+import com.optimobileplusz.module.RenderThrottle;
+import com.optimobileplusz.module.ThermalProtection;
 import net.minecraft.client.MinecraftClient;
 
 public class OptiCore {
     private static OptimizationState currentState = OptimizationState.EXTREME;
 
     public static void initialize() {
+        TickLimiter.init();
     }
 
     public static void update() {
+        currentState = AdaptiveEngine.update(currentState);
+
         // Alapvető optimalizációk futtatása minden tickben
         RenderThrottle.update(currentState);
         ParticleLimiter.update(currentState);
-        
-        // A dinamikus látótávolság logika teljes egészében eltávolítva,
-        // hogy ne állítgassa a játékot a hátad mögött.
+        FrameBudgetManager.update(currentState);
+        EntityCulling.update(currentState);
+        ThermalProtection.update(currentState);
     }
 
     /**

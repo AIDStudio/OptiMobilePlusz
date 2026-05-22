@@ -1,5 +1,8 @@
 package com.optimobileplusz.client.mixin;
 
+import com.optimobileplusz.core.OptiCore;
+import com.optimobileplusz.module.AnimationThrottle;
+import com.optimobileplusz.module.FrameBudgetManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,13 +23,7 @@ public class SpriteContentsMixin {
             return;
         }
 
-        // Lekérjük a világidőt tickekben
-        long worldTime = client.world.getTime();
-        
-        // Minden második tickben teljesen letiltjuk az animációk frissítését.
-        // Ez azonnal lefelezi a MobileGlues és a Poco GPU-ja közötti felesleges adatforgalmat, 
-        // hatalmas FPS löketet adva anélkül, hogy bármi elromlana!
-        if (worldTime % 2 == 0) {
+        if (AnimationThrottle.shouldSkipAnimatedSprites(OptiCore.getState()) || FrameBudgetManager.shouldStrongThrottleEffects()) {
             ci.cancel();
         }
     }
