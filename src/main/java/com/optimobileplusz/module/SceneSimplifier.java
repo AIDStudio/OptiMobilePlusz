@@ -18,9 +18,9 @@ public class SceneSimplifier {
 
         if (OptiMobileConfig.frameBudgetEnabled) {
             // Próbáljuk a getGraphics() metódussal
-            client.options.getGraphics().setValue(GraphicsMode.FAST);
+            client.options.graphicsMode().setValue(GraphicsMode.FAST);
         } else {
-            client.options.getGraphics().setValue(GraphicsMode.FANCY);
+            client.options.graphicsMode().setValue(GraphicsMode.FANCY);
         }
     }
 }
