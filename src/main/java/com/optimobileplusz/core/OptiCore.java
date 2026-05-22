@@ -1,10 +1,16 @@
 package com.optimobileplusz.core;
 
 import com.optimobileplusz.module.AdaptiveEngine;
+import com.optimobileplusz.module.ChunkLoadManager;
 import com.optimobileplusz.module.EntityCulling;
 import com.optimobileplusz.module.FrameBudgetManager;
+import com.optimobileplusz.module.GpuProfileManager;
+import com.optimobileplusz.module.LODManager;
 import com.optimobileplusz.module.ParticleLimiter;
 import com.optimobileplusz.module.RenderThrottle;
+import com.optimobileplusz.module.SceneSimplifier;
+import com.optimobileplusz.module.TextureStreamingManager;
+import com.optimobileplusz.module.TelemetryManager;
 import com.optimobileplusz.module.ThermalProtection;
 import net.minecraft.client.MinecraftClient;
 
@@ -23,7 +29,13 @@ public class OptiCore {
         ParticleLimiter.update(currentState);
         FrameBudgetManager.update(currentState);
         EntityCulling.update(currentState);
+        LODManager.update(currentState);
+        ChunkLoadManager.update(currentState);
+        TextureStreamingManager.update(currentState);
+        SceneSimplifier.update();
+        GpuProfileManager.update(currentState);
         ThermalProtection.update(currentState);
+        TelemetryManager.update();
     }
 
     /**

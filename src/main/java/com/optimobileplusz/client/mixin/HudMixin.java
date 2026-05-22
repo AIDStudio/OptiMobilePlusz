@@ -1,10 +1,12 @@
 package com.optimobileplusz.client.mixin;
 
 import com.optimobileplusz.config.OptiMobileConfig;
+import com.optimobileplusz.module.HudOverlayManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.render.RenderTickCounter;
+import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
