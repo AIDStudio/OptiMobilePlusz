@@ -17,10 +17,10 @@ public class SceneSimplifier {
         }
 
         if (OptiMobileConfig.frameBudgetEnabled) {
-            // Közvetlenül a mezőn hívjuk a .setValue() metódust, getGraphicsMode() nélkül
-            client.options.graphicsMode.setValue(GraphicsMode.FAST);
+            // Az újabb mappingekben a mező neve simán 'graphics'
+            client.options.graphics.setValue(GraphicsMode.FAST);
         } else {
-            client.options.graphicsMode.setValue(GraphicsMode.FANCY);
+            client.options.graphics.setValue(GraphicsMode.FANCY);
         }
     }
 }
