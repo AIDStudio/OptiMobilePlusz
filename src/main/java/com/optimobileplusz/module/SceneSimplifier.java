@@ -19,9 +19,9 @@ public class SceneSimplifier {
         // A 1.21-es mappingekben a mező neve pontosan: graphicsMode
         // Mivel ez egy SimpleOption<GraphicsMode>, a .set() metódust kell használnunk
         if (OptiMobileConfig.frameBudgetEnabled) {
-            client.options.graphicsMode.set(GraphicsMode.FAST);
+            client.options.graphics.set(GraphicsMode.FAST);
         } else {
-            client.options.graphicsMode.set(GraphicsMode.FANCY);
+            client.options.graphics.set(GraphicsMode.FANCY);
         }
     }
 }
