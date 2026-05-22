@@ -16,14 +16,12 @@ public class SceneSimplifier {
             return;
         }
 
-        // 1.21-ben a GameOptions-ben a grafika már nem mező, hanem egy objektum, 
-        // ami a .getValue() és .setValue() metódusokat használja.
-        // A mező neve a Yarn mappingben 1.21-nél: graphicsMode
-        
+        // A 1.21-es mappingekben a mező neve pontosan: graphicsMode
+        // Mivel ez egy SimpleOption<GraphicsMode>, a .set() metódust kell használnunk
         if (OptiMobileConfig.frameBudgetEnabled) {
-            client.options.getGraphicsMode().setValue(GraphicsMode.FAST);
+            client.options.graphicsMode.set(GraphicsMode.FAST);
         } else {
-            client.options.getGraphicsMode().setValue(GraphicsMode.FANCY);
+            client.options.graphicsMode.set(GraphicsMode.FANCY);
         }
     }
 }
