@@ -17,10 +17,10 @@ public class SceneSimplifier {
         }
 
         if (OptiMobileConfig.frameBudgetEnabled) {
-            // A modern verziókban a graphicsMode egy SimpleOption objektum, aminek a .setValue() metódussal adunk értéket
-            client.options.getGraphicsMode().setValue(GraphicsMode.FAST);
+            // Közvetlenül a mezőn hívjuk a .setValue() metódust, getGraphicsMode() nélkül
+            client.options.graphicsMode.setValue(GraphicsMode.FAST);
         } else {
-            client.options.getGraphicsMode().setValue(GraphicsMode.FANCY);
+            client.options.graphicsMode.setValue(GraphicsMode.FANCY);
         }
     }
 }
