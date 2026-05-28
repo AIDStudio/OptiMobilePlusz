@@ -1,6 +1,6 @@
 [![CurseForge](https://img.shields.io/badge/CurseForge-Download-blue?logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/optymobileplusz)
 
-# 📱 OptiMobilePlusz (v1.2)
+# 📱 OptiMobilePlusz (v1.3)
 
 **OptiMobilePlusz** is a mobile-focused performance mod for **Minecraft 1.21.1 (Fabric)**, optimized for devices running through **PojavLauncher**, **Zalith Launcher 2**, and other ARM-heavy environments. The mod uses Fabric client hooks, runtime optimization modules, and GUI-driven presets to keep FPS stable on weaker hardware.
 
