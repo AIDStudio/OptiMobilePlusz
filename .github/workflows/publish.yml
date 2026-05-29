@@ -26,22 +26,28 @@ jobs:
         run: ./gradlew build
 
       - name: Publish to CurseForge
-        uses: Kirbatise/publish-curseforge@v1
+        uses: AykutSarac/actions-curseforge@v1
         with:
-          # A GitHub Secrets token
+          # A GitHub Secrets tokened
           token: ${{ secrets.CURSEFORGE_TOKEN }}
           
           # A modod CurseForge azonosítója
-          project-id: 1542509
+          project_id: 1542509
           
-          # Csak a kész, védett mod fájlt választja ki, a sources.jar-t kihagyja
-          game-endpoint: build/libs/!(*-sources).jar
+          # Kiválasztja a kész mod fájlt, kizárva a sources-t
+          file_path: build/libs/!(*-sources).jar
           
-          # Támogatott verzió és loader
-          game-versions: '1.21.1'
+          # A CurseForge felületén megjelenő verziónév (opcionális, a GitHub tag nevét kapja meg)
+          file_name: OptiElitePlusz-${{ github.ref_name }}.jar
+          
+          # Támogatott verzió, loader és kiadási típus
+          game_versions: '1.21.1'
           loaders: 'fabric'
-          release-type: 'release'
           
-          # Ez a sor automatikusan átveszi azt a leírást/changelogot, amit a GitHub Release létrehozásakor beírsz!
+          # Mivel most bétát adsz ki, a GitHub Release-ből ezt automatikusan kiolvassa!
+          # Ha a GitHubon bepipálod a "Set as a pre-release" gombot, beta lesz, ha nem, akkor release.
+          release_type: ${{ github.event.release.prerelease && 'beta' || 'release' }}
+          
+          # Átveszi a GitHub Release leírását changelognak
           changelog: ${{ github.event.release.body }}
           
