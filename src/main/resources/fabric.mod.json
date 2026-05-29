@@ -2,9 +2,9 @@
 	"schemaVersion": 1,
 	"id": "optimobileplusz",
 	"version": "${version}",
-	"name": "OptiMobilePlusz",
+	"name": "OptiElitePlusz",
 	"icon": "assets/optimobileplusz/icon.png",
-	"description": "OptiMobilePlusz V1.2 FPS Boost for potato mobile",
+	"description": "OptiElitePlusz V1.3 FPS Boost for potato mobile",
 	"authors": [
 		"AidStudio (Ody)"
 	],
