@@ -1,0 +1,47 @@
+name: publish
+on:
+  release:
+    types: [published] # Csak akkor indul el, ha a GitHubon rámész a "Create a new release" gombra és közzéteszed
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v6
+        
+      - name: validate gradle wrapper
+        uses: gradle/actions/wrapper-validation@v6
+        
+      - name: setup jdk
+        uses: actions/setup-java@v5
+        with:
+          java-version: '25'
+          distribution: 'microsoft'
+          
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+        
+      - name: build
+        run: ./gradlew build
+
+      - name: Publish to CurseForge
+        uses: Kirbatise/publish-curseforge@v1
+        with:
+          # A GitHub Secrets token
+          token: ${{ secrets.CURSEFORGE_TOKEN }}
+          
+          # A modod CurseForge azonosítója
+          project-id: 1542509
+          
+          # Csak a kész, védett mod fájlt választja ki, a sources.jar-t kihagyja
+          game-endpoint: build/libs/!(*-sources).jar
+          
+          # Támogatott verzió és loader
+          game-versions: '1.21.1'
+          loaders: 'fabric'
+          release-type: 'release'
+          
+          # Ez a sor automatikusan átveszi azt a leírást/changelogot, amit a GitHub Release létrehozásakor beírsz!
+          changelog: ${{ github.event.release.body }}
+          
