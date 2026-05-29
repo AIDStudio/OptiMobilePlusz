@@ -1,88 +1,100 @@
 [![CurseForge](https://img.shields.io/badge/CurseForge-Download-blue?logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/optymobileplusz)
 
-# 📱 OptiMobilePlusz (v1.3)
+# ⚡ OptiElitePlusz (v1.3.1)
 
-**OptiMobilePlusz** is a mobile-focused performance mod for **Minecraft 1.21.1 (Fabric)**, optimized for devices running through **PojavLauncher**, **Zalith Launcher 2**, and other ARM-heavy environments. The mod uses Fabric client hooks, runtime optimization modules, and GUI-driven presets to keep FPS stable on weaker hardware.
+### 📢 IMPORTANT PROJECT NOTICE: 
+**OptiMobilePlusz has officially been rebranded to OptiElitePlusz starting from v1.3.1!** Along with the new name, this update officially introduces deep, native optimizations for low-end desktop PCs and laptops, while remaining 100% committed to providing the ultimate performance boost for mobile players.
 
-## 📊 Tested performance profile
-- **Target devices:** Snapdragon 695 / ARM-based Android and low-power handheld setups
-- **Result:** stable FPS gains through adaptive throttling, chunk handling, entity culling, LOD scaling, and visual simplification
-- **Best use:** mobile-first play, low-memory devices, modpacks where FPS stability matters more than max visual fidelity
+***
 
----
+### 🚀 The Elite Performance Engine for Low-End PCs, Laptops & ARM Mobile Devices
 
-## 🚀 New features and improvements
+**OptiElitePlusz** is a high-performance optimization mod for **Minecraft 1.21.1 (Fabric)**. It is specifically engineered to maximize FPS, eliminate micro-stutters, and guarantee thermal stability on weak, budget, or older hardware—ranging from low-spec desktop PCs to mobile systems running through **PojavLauncher** or **Zalith Launcher 2**.
 
-### 🎛 Adaptive performance engine
-- **Adaptive Engine** automatically switches between `EXTREME`, `PERFORMANCE`, `BALANCED`, and `ULTRA` based on real-time FPS.
-- **Frame Budget Manager** activates when performance drops, reducing expensive visual load and smoothing gameplay.
-- **GPU Profile Manager** detects device limitations and adapts the optimization profile.
+By utilizing advanced Fabric client hooks, lightweight runtime modules, and dynamic GUI-driven profiles, the mod auto-tunes your game engine on the fly. No complex manual tweaking required—just raw, optimized performance.
 
-### 🧠 Rendering and world optimization
-- **Smart Entity Culling** hides distant entities to reduce CPU and GPU cost.
-- **LOD Manager** lowers entity distance scaling dynamically during weak FPS periods.
-- **Render Throttle** disables unnecessary visual effects, keeps simulation distance controlled, and disables view bobbing.
-- **Scene Simplifier** switches graphics behavior to a lighter profile for mobile stability.
-- **Texture Streaming Manager** throttles async texture work when performance is under pressure.
-- **Particle Limiter** reduces particle load automatically depending on the active performance state.
+## 📊 Performance & Hardware Profile
 
-### 📦 Chunk, audio, and background handling
-- **Adaptive Chunk Loading** changes chunk simulation behavior based on motion and performance conditions.
-- **Background Tick Throttler** skips heavy background processing when the game loses focus.
-- **Sound Budget Manager** reduces non-essential audio load.
-- **Thermal Protection** warns when the device is entering a risky thermal/lag zone.
+* **Target Hardware:** Low-spec Desktop PCs, older Laptops (integrated GPUs), Snapdragon / ARM-based Android setups, and low-power handhelds.
+* **The Result:** Massive and stable FPS gains through adaptive thread throttling, intelligent chunk prioritisation, advanced entity culling, dynamic LOD scaling, and streamlined rendering pipelines.
+* **Best Used For:** Low-end desktop setups, mobile-first play, memory-constrained environments, and heavy modpacks where frame stability matters more than unoptimized visual fidelity.
 
-### 📱 Mobile UX improvements
-- **Smooth zoom** with the built-in keybind (default `C`) for quick visual inspection.
-- **Pixel-style FPS counter** with color-coded performance display.
-- **Detailed overlay** shows active budget state, particle multiplier and current runtime performance hints.
-- **Preset Manager** supports `battery`, `balanced`, and `competition` profiles for quickly switching optimization behavior.
-- **Config GUI** lets players toggle performance features without editing files manually.
+***
 
----
+## 🚀 Key Features and Improvements
+
+### 🎛 Adaptive Performance Engine (PC & Mobile)
+
+* **Adaptive Engine:** Automatically switches between `EXTREME`, `PERFORMANCE`, `BALANCED`, and `ULTRA` profiles based on your live, real-time FPS.
+* **Frame Budget Manager:** Dynamically triggers during heavy lag spikes, reducing expensive rendering workloads to keep your frame times consistent.
+* **Architecture Detector (NEW v1.3.1):** Intelligently detects whether the game is running on a standard x86 Desktop PC or an ARM Mobile platform, automatically applying tailored system thread and garbage collection parameters for that specific hardware type.
+
+### 🧠 Advanced Rendering & World Optimization
+
+* **Smart Entity Culling:** Dynamically hides distant entities to heavily reduce CPU and GPU overhead on both desktop and mobile screens.
+* **LOD Manager:** Scales entity rendering distances down seamlessly during intensive gameplay or weak FPS periods.
+* **Render Throttle:** Automatically manages non-essential visual effects and view bobbing to keep your hardware running cool and fast.
+* **Scene Simplifier:** Switches complex graphical behaviors to a lightweight, resource-friendly profile when under heavy stress.
+* **Texture Streaming:** Throttles asynchronous texture loading to prevent performance drops during rapid world exploration or high-speed chunk loading.
+* **Particle Limiter:** Intelligently drops particle counts based on your active performance state.
+
+### 📦 Chunk, Audio, and Background Handling
+
+* **Adaptive Chunk Loading:** Dynamically alters chunk simulation behavior based on player movement and hardware capabilities.
+* **Background Tick Throttler:** Skips heavy background world processing when the game loses focus, is minimized, or when switching tabs on a PC.
+* **Sound Budget Manager:** Allocates and limits non-essential audio processing threads to free up critical CPU cores.
+* **Thermal & Lag Protection:** Provides soft warnings when your hardware enters a heavy throttling or high-heat zone.
+
+### 🎮 Enhanced UI & Universal UX Features
+
+* **High-Performance Smooth Zoom:** Built-in smooth camera zoom via hotkey (Default: `C`). Fully optimized for both desktop mouse precision and mobile touch controls—completely eliminating the need for extra zoom mods!
+* **Pixel-Style FPS Counter:** A clean, color-coded FPS display tailored for high visibility on any monitor or screen size.
+* **Detailed Performance Overlay:** Real-time diagnostics showing your active budget state, particle multipliers, and live runtime performance hints.
+* **Preset Manager:** Quickly cycle through `battery/power-saver`, `balanced`, and `competition` profiles via an intuitive in-game interface.
+* **Config GUI:** Toggle and tweak every single feature easily without ever touching a config file.
+
+***
 
 ## 🛠 Installation
-1. Install **Fabric Loader** for Minecraft 1.21.1 and ensure **Java 21** is available.
-2. Download the latest `-RELEASE.jar`.
-3. Put the file into your `mods` folder.
-4. Launch Minecraft and use the built-in config screen / in-game performance features.
 
----
+1.  Install **Fabric Loader** for Minecraft 1.21.1 and ensure **Java 21** is active.
+2.  Download the latest `-RELEASE.jar` file.
+3.  Drop the file directly into your `mods` folder.
+4.  Launch the game and configure your presets using the in-game options menu.
 
-## 🎮 Recommended controls and presets
-- **Zoom:** `C`
-- **FPS overlay:** enabled by default for mobile visibility
-- **Presets:**
-  - `battery` → maximum stability, aggressive culling, background throttling, lower particle and sound load
-  - `balanced` → safe default for regular play
-  - `competition` → lighter performance tuning with telemetry enabled
+***
 
----
+## 🎮 Recommended Controls and Presets
 
-## 📁 Included runtime data
-- Performance settings are saved into the Fabric config directory.
-- Presets and telemetry snapshots are stored locally for quick recovery and tuning.
-- The mod is designed to stay lightweight while adapting to mobile hardware changes during play.
+* **Zoom Hotkey:** `C`
+* **FPS Overlay:** Enabled by default (can be toggled in the config GUI).
+* **Presets:**
+    * `battery / power-saver` → Maximum hardware stability, aggressive culling, background throttling, lowest resource usage. Perfect for phones and laptops on battery power.
+    * `balanced` → The recommended safe default for standard, smooth gameplay.
+    * `competition` → High-performance tuning with active hardware telemetry enabled.
 
----
+***
+
+## 📁 Runtime Data & Footprint
+
+* All configuration profiles are securely saved directly into the standard Fabric config directory.
+* Presets and optimization snapshots are cached locally for lightning-fast game loading.
+* The mod maintains an extremely lightweight memory footprint, making it fully compatible with other standard optimization mods.
+
+***
 
 ## ⚖️ License Agreement (EULA)
 
-**OptiMobilePlusz – End User License Agreement & Terms of Use**
+**OptiElitePlusz – End User License Agreement & Terms of Use**
 
-1. **Ownership and Source Code:**
-OptiMobilePlusz (hereinafter: "Mod") is the exclusive intellectual property of the creator (**AidStudio**). The Mod is **OPEN SOURCE**. Decompilation, reverse engineering, modification, or incorporating any part of the Mod into other projects is strictly PROHIBITED.
-
-2. **Distribution Restrictions:**
-Uploading or distributing the Mod files (.jar) to any other website, hosting service, or social platform without the creator's explicit permission is not allowed. The Mod may only be downloaded through official CurseForge and Modrinth pages.
-
-3. **Modpack Usage:**
-The Mod may be freely included in any modpack (public or private) without prior permission, provided that:
-- The creator's name and the original name of the Mod are clearly credited.
-- A link to the Mod's official CurseForge or Modrinth page is included in the modpack description.
-
-4. **Content Creation:**
-The Mod may be featured in videos and live streams (YouTube, Twitch, TikTok, etc.), provided that the official download link is included in the description.
-
-5. **Limitation of Liability:**
-The creator is not responsible for any performance issues, software errors, or damages resulting from the use of the Mod.
+1.  **Ownership and Source Code:** OptiElitePlusz (hereinafter: "Mod") is the exclusive intellectual property of the creator (**AidStudio**). The Mod is published under a **SOURCE AVAILABLE** model. Decompilation, reverse engineering, unauthorized modification, or incorporating any part of the Mod's code into other projects is strictly PROHIBITED.
+    
+2.  **Distribution Restrictions:** Re-uploading, hosting, or distributing the Mod files (.jar) to any external website, hosting provider, or social platform without the creator's explicit prior written permission is strictly forbidden. The Mod may only be downloaded through official CurseForge and Modrinth pages.
+    
+3.  **Modpack Usage:** The Mod may be freely included in any modpack (public or private) without prior permission, provided that:
+    * The creator's name (**AidStudio**) and the original/current name of the Mod are clearly credited.
+    * A direct link to the Mod's official CurseForge or Modrinth page is included in the modpack's description.
+    
+4.  **Content Creation:** The Mod may be featured in videos, reviews, and live streams (YouTube, Twitch, TikTok, etc.), provided that the official CurseForge/Modrinth download link is clearly included in the content description.
+    
+5.  **Limitation of Liability:** The creator is not responsible for any specific gameplay performance drops, software conflicts, or hardware issues resulting from the use or misconfiguration of the Mod.
