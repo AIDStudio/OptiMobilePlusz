@@ -2,7 +2,7 @@
 
 # ⚡ OptiElitePlusz (v1.3.1)
 
-### 📢 IMPORTANT PROJECT NOTICE: 
+### 📢 IMPORTANT PROJECT NOTICE:
 **OptiMobilePlusz has officially been rebranded to OptiElitePlusz starting from v1.3.1!** Along with the new name, this update officially introduces deep, native optimizations for low-end desktop PCs and laptops, while remaining 100% committed to providing the ultimate performance boost for mobile players.
 
 ***
@@ -17,7 +17,17 @@ By utilizing advanced Fabric client hooks, lightweight runtime modules, and dyna
 
 * **Target Hardware:** Low-spec Desktop PCs, older Laptops (integrated GPUs), Snapdragon / ARM-based Android setups, and low-power handhelds.
 * **The Result:** Massive and stable FPS gains through adaptive thread throttling, intelligent chunk prioritisation, advanced entity culling, dynamic LOD scaling, and streamlined rendering pipelines.
-* **Best Used For:** Low-end desktop setups, mobile-first play, memory-constrained environments, and heavy modpacks where frame stability matters more than unoptimized visual fidelity.
+* **Best Used For:** Low-end desktop setups, memory-constrained environments, mobile-first play, and heavy modpacks where frame stability matters more than unoptimized visual fidelity.
+
+***
+
+### 📈 Real-Time In-Game Benchmarks (No other optimization mods used!)
+
+![OptiElitePlusz 234 FPS Benchmark](https://raw.githubusercontent.com/AIDStudio/OptiMobilePlusz/refs/heads/main/pictures/2.jpg)
+*Over **230+ FPS** achieved purely with OptiElitePlusz on a mid-range mobile device (Snapdragon 695) in a dense forest biome—with **zero** other optimization mods installed.*
+
+![OptiElitePlusz F3 Diagnostics](https://raw.githubusercontent.com/AIDStudio/OptiMobilePlusz/refs/heads/main/pictures/1.png)
+*Extreme memory efficiency and zero lag spikes: running Minecraft 1.21.1 Java Edition smoothly while allocating only **~526MB of RAM** (25% footprint).*
 
 ***
 
@@ -57,7 +67,7 @@ By utilizing advanced Fabric client hooks, lightweight runtime modules, and dyna
 
 ## 🛠 Installation
 
-1.  Install **Fabric Loader** for Minecraft 1.21.1 and ensure **Java 21** is active.
+1.  Install **Fabric Loader** for Minecraft 1.21.1 and ensure **Java 21** (or higher) is active.
 2.  Download the latest `-RELEASE.jar` file.
 3.  Drop the file directly into your `mods` folder.
 4.  Launch the game and configure your presets using the in-game options menu.
