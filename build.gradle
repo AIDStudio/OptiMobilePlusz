@@ -17,6 +17,7 @@ repositories {
     maven {
         url = uri("https://maven.fabricmc.net/")
         metadataSources {
+            artifact()
             mavenPom()
         }
     } // Fabric API helye
