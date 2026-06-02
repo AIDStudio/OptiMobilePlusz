@@ -1,12 +1,10 @@
 package com.optimobileplusz.client.mixin;
 
 import com.optimobileplusz.config.OptiMobileConfig;
-import com.optimobileplusz.module.HudOverlayManager;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.MinecraftClient; // JAVÍTVA
+import net.minecraft.client.gui.DrawContext; // JAVÍTVA
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.render.RenderTickCounter;
-import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -16,10 +14,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class HudMixin {
 
     @Inject(method = "render", at = @At("TAIL"))
-    private void onRender(GuiGraphicsExtractor context, RenderTickCounter tickCounter, CallbackInfo ci) {
-        Minecraft client = Minecraft.getInstance();
+    private void onRender(DrawContext context, RenderTickCounter tickCounter, CallbackInfo ci) { // JAVÍTVA
+        MinecraftClient client = MinecraftClient.getInstance(); // JAVÍTVA
 
-        if (client != null && client.world != null && OptiMobileConfig.showFps) {
+        if (client != null && client.getWorld() != null && OptiMobileConfig.showFps) { // JAVÍTVA
             if (!client.getDebugHud().shouldShowDebugHud()) {
                 
                 int fps = client.getCurrentFps();
@@ -30,44 +28,28 @@ public class HudMixin {
                 int startX = (screenWidth / 2) - (totalContentWidth / 2);
                 int y = 10;
 
-                // Meghatározzuk a színt az FPS függvényében
                 int fpsColor;
                 if (fps >= 100) {
-                    fpsColor = 0xFF00FFCC; // Cián / Szuper FPS
+                    fpsColor = 0xFF00FFCC;
                 } else if (fps >= 60) {
-                    fpsColor = 0xFF00FF00; // Zöld / Jó FPS
+                    fpsColor = 0xFF00FF00;
                 } else if (fps >= 30) {
-                    fpsColor = 0xFFFFFF00; // Sárga / Közepes
+                    fpsColor = 0xFFFFFF00;
                 } else {
-                    fpsColor = 0xFFFF0000; // Piros / Lag
+                    fpsColor = 0xFFFF0000;
                 }
 
-                // Számok kirajzolása a dinamikus színnel
                 drawPixelNum(context, fps / 100, startX, y, fpsColor);           
                 drawPixelNum(context, (fps / 10) % 10, startX + 8, y, fpsColor);   
                 drawPixelNum(context, fps % 10, startX + 16, y, fpsColor);        
                 
-                // Az "FPS" felirat marad az eredeti elegáns narancssárga
                 drawCharFPS(context, startX + 26, y);
             }
         }
     }
 
-    // Frissített rajzoló, ami már paraméterként kapja a színt (int color)
-    private void drawPixelNum(GuiGraphicsExtractor context, int num, int x, int y, int color) {
-        int[] digits = {
-            0x7b6f, // 0
-            0x2492, // 1
-            0x73e7, // 2
-            0x73cf, // 3
-            0x5bc9, // 4
-            0x79cf, // 5
-            0x79ef, // 6
-            0x7249, // 7
-            0x7bef, // 8
-            0x7bcf  // 9
-        };
-
+    private void drawPixelNum(DrawContext context, int num, int x, int y, int color) { // JAVÍTVA
+        int[] digits = { 0x7b6f, 0x2492, 0x73e7, 0x73cf, 0x5bc9, 0x79cf, 0x79ef, 0x7249, 0x7bef, 0x7bcf };
         if (num < 0 || num > 9) return;
         int mask = digits[num];
 
@@ -80,22 +62,18 @@ public class HudMixin {
         }
     }
 
-    private void drawCharFPS(GuiGraphicsExtractor context, int x, int y) {
-        int c = 0xFFFFAA00; // Narancssárga
-
-        // --- 'F' BETŰ ---
+    private void drawCharFPS(DrawContext context, int x, int y) { // JAVÍTVA
+        int c = 0xFFFFAA00;
         context.fill(x, y, x + 2, y + 10, c);         
         context.fill(x + 2, y, x + 6, y + 2, c);     
         context.fill(x + 2, y + 4, x + 5, y + 6, c); 
 
-        // --- 'P' BETŰ ---
         int px = x + 6;
         context.fill(px, y, px + 2, y + 10, c);       
         context.fill(px + 2, y, px + 6, y + 2, c);   
         context.fill(px + 2, y + 4, px + 6, y + 6, c); 
         context.fill(px + 4, y + 2, px + 6, y + 4, c); 
 
-        // --- 'S' BETŰ ---
         int sx = x + 12;
         context.fill(sx, y, sx + 6, y + 2, c);       
         context.fill(sx, y + 2, sx + 2, y + 4, c);   
