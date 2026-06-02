@@ -34,12 +34,12 @@ repositories {
 // Disable remapping of outputs (we rely on Mojang's official names for 26.1+)
 loom {
     dontRemapOutputs()
+    mappingsFile = file('libs/official-mappings.jar')
 }
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    // Use a local identity mappings jar so Loom finds a `named` namespace.
-    mappings files('libs/official-mappings.jar')
+    mappings loom.officialMojangMappings()
 
     // For Minecraft 26.1+, Minecraft is unobfuscated — no intermediary/yarn mappings required.
     // Use the new Loom (non-remapping) workflow: use standard configurations `implementation` / `compileOnly`.
