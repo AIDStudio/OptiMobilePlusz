@@ -21,6 +21,13 @@ repositories {
             mavenPom()
         }
     } // Fabric API helye
+    maven {
+        url = uri("https://repo.spongepowered.org/maven")
+        metadataSources {
+            artifact()
+            mavenPom()
+        }
+    } // Sponge Mixin repository
     mavenCentral() // Általános Java könyvtárak
 }
 
@@ -38,9 +45,16 @@ dependencies {
     // Use the new Loom (non-remapping) workflow: use standard configurations `implementation` / `compileOnly`.
     implementation "net.fabricmc:fabric-loader:${project.loader_version}"
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    compileOnly "org.spongepowered:mixin:0.8.5"
 
     // Mod Menu integráció (compile-time/runtime dependency)
     implementation "com.terraformersmc:modmenu:11.0.1"
+}
+
+configurations {
+    compileClasspath {
+        extendsFrom configurations.minecraft
+    }
 }
 
 processResources {
