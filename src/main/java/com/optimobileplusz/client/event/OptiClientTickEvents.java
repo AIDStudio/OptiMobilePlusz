@@ -14,7 +14,7 @@ public class OptiClientTickEvents {
      * Itt frissítjük a mérőket és futtatjuk az optimalizációt.
      */
     public static void tick(MinecraftClient client) {
-        // JAVÍTVA: client.world helyett client.getWorld() használata a 26.1.x-hez
+        // Ha a játékos nincs bent egy világban (pl. főmenüben van), ne csináljunk semmit
         if (client.getWorld() == null) {
             return;
         }
@@ -33,10 +33,12 @@ public class OptiClientTickEvents {
     }
 
     /**
-     * Regisztrálja az eseménykezelőt a Fabric API-n keresztül.
+     * Regisztrálja az eseménykezelőt a Fabric API-n keresztül a 26.1.x szabvány szerint.
      */
     public static void register() {
-        net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.END_CLIENT_TICK.register(client -> {
+        // JAVÍTVA: END_CLIENT_TICK helyett az új 26.1.x kompatibilis END_WORLD_TICK-et használjuk a MinecraftClient példánnyal
+        net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.END_WORLD_TICK.register(world -> {
+            MinecraftClient client = MinecraftClient.getInstance();
             tick(client);
         });
     }
