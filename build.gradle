@@ -9,6 +9,13 @@ group = project.maven_group
 // Itt adjuk meg a letöltési forrásokat
 repositories {
     maven {
+        url = uri('libs/minecraft-local-repo')
+        metadataSources {
+            artifact()
+            mavenPom()
+        }
+    }
+    maven {
         url = uri("${gradle.gradleUserHomeDir}/caches/fabric-loom/minecraftMaven")
         metadataSources {
             artifact()
@@ -44,7 +51,8 @@ loom {
 }
 
 dependencies {
-    minecraft files("${gradle.gradleUserHomeDir}/caches/fabric-loom/${project.minecraft_version}/minecraft-client.jar")
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings files('libs/official-mappings.jar')
 
     // For Minecraft 26.1+, Minecraft is unobfuscated — no intermediary/yarn mappings required.
     // Use the new Loom (non-remapping) workflow: use standard configurations `implementation` / `compileOnly`.
