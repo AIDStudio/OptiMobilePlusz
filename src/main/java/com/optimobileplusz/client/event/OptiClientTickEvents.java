@@ -5,7 +5,7 @@ import com.optimobileplusz.client.ZoomState;
 import com.optimobileplusz.client.monitor.FpsMonitor;
 import com.optimobileplusz.module.BackgroundTickThrottler;
 import com.optimobileplusz.core.OptiCore;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.MinecraftClient; // <-- JAVÍTVA: Fabric-os MinecraftClient import
 
 public class OptiClientTickEvents {
 
@@ -13,7 +13,7 @@ public class OptiClientTickEvents {
      * Ezt a metódust hívja meg a rendszer minden egyes kliens-oldali tick végén.
      * Itt frissítjük a mérőket és futtatjuk az optimalizációt.
      */
-    public static void tick(Minecraft client) {
+    public static void tick(MinecraftClient client) { // <-- JAVÍTVA: Típus átírva MinecraftClient-re
         // Ha a játékos nincs bent egy világban (pl. főmenüben van), ne csináljunk semmit
         if (client.world == null) {
             return;
