@@ -9,11 +9,7 @@ group = project.maven_group
 // Itt adjuk meg a letöltési forrásokat
 repositories {
     maven {
-        url = uri('libs/minecraft-local-repo')
-        metadataSources {
-            artifact()
-            mavenPom()
-        }
+        url = file("${project.projectDir}/libs/minecraft-local-repo").toURI()
     }
     maven {
         url = uri("${gradle.gradleUserHomeDir}/caches/fabric-loom/minecraftMaven")
