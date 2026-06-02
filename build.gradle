@@ -48,6 +48,10 @@ dependencies {
     implementation "net.fabricmc:fabric-loader:${project.loader_version}"
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
+    // Official mapping compile-time dependency for Minecraft classes.
+    compileOnly "com.mojang:minecraft:${project.minecraft_version}"
+    compileOnly "org.spongepowered:mixin:0.8.5"
+
     // Mod Menu integráció (compile-time/runtime dependency)
     implementation "com.terraformersmc:modmenu:11.0.1"
 }
