@@ -55,6 +55,7 @@ loom {
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings files('libs/official-mappings.jar')
 
     // For Minecraft 26.1+, Minecraft is unobfuscated — no intermediary/yarn mappings required.
     // Use the new Loom (non-remapping) workflow: use standard configurations `implementation` / `compileOnly`.
