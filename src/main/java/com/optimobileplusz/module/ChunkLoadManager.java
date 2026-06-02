@@ -2,7 +2,7 @@ package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
 
 public class ChunkLoadManager {
 
@@ -11,7 +11,7 @@ public class ChunkLoadManager {
             return;
         }
 
-        MinecraftClient client = MinecraftClient.getInstance();
+        Minecraft client = Minecraft.getInstance();
         if (client == null || client.player == null || client.world == null) {
             return;
         }

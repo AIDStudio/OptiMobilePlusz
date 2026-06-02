@@ -2,9 +2,9 @@ package com.optimobileplusz.client.gui;
 
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptiCore;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.text.Text;
 
 public class OptiMobileConfigScreen extends Screen {
@@ -30,21 +30,21 @@ public class OptiMobileConfigScreen extends Screen {
         int rightX = centerX + 10;
         int y = 40;
 
-        ButtonWidget stateButton = ButtonWidget.builder(stateLabel(), button -> {})
+        Button stateButton = Button.builder(stateLabel(), button -> {})
             .dimensions(centerX - 100, y, 200, 20)
             .build();
         stateButton.active = false;
         this.addDrawableChild(stateButton);
 
         y += 28;
-        ButtonWidget generalLabel = ButtonWidget.builder(Text.translatable("gui.optimobileplusz.section.general"), button -> {})
+        Button generalLabel = Button.builder(Text.translatable("gui.optimobileplusz.section.general"), button -> {})
             .dimensions(centerX - 100, y, 200, 20)
             .build();
         generalLabel.active = false;
         this.addDrawableChild(generalLabel);
 
         y += 24;
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.fastClouds", OptiMobileConfig.fastClouds), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.fastClouds", OptiMobileConfig.fastClouds), button -> {
                 OptiMobileConfig.fastClouds = !OptiMobileConfig.fastClouds;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.fastClouds", OptiMobileConfig.fastClouds));
@@ -53,7 +53,7 @@ public class OptiMobileConfigScreen extends Screen {
             .build());
 
         y += 24;
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.particles", OptiMobileConfig.particlesEnabled), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.particles", OptiMobileConfig.particlesEnabled), button -> {
                 OptiMobileConfig.particlesEnabled = !OptiMobileConfig.particlesEnabled;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.particles", OptiMobileConfig.particlesEnabled));
@@ -62,21 +62,21 @@ public class OptiMobileConfigScreen extends Screen {
             .build());
 
         y += 28;
-        ButtonWidget advancedLabel = ButtonWidget.builder(Text.translatable("gui.optimobileplusz.section.advanced"), button -> {})
+        Button advancedLabel = Button.builder(Text.translatable("gui.optimobileplusz.section.advanced"), button -> {})
             .dimensions(centerX - 100, y, 200, 20)
             .build();
         advancedLabel.active = false;
         this.addDrawableChild(advancedLabel);
 
         y += 24;
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.frameBudget", OptiMobileConfig.frameBudgetEnabled), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.frameBudget", OptiMobileConfig.frameBudgetEnabled), button -> {
                 OptiMobileConfig.frameBudgetEnabled = !OptiMobileConfig.frameBudgetEnabled;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.frameBudget", OptiMobileConfig.frameBudgetEnabled));
             })
             .dimensions(leftX, y, 100, 20)
             .build());
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.entityCulling", OptiMobileConfig.smartEntityCulling), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.entityCulling", OptiMobileConfig.smartEntityCulling), button -> {
                 OptiMobileConfig.smartEntityCulling = !OptiMobileConfig.smartEntityCulling;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.entityCulling", OptiMobileConfig.smartEntityCulling));
@@ -85,14 +85,14 @@ public class OptiMobileConfigScreen extends Screen {
             .build());
 
         y += 24;
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.animationThrottle", OptiMobileConfig.throttledAnimations), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.animationThrottle", OptiMobileConfig.throttledAnimations), button -> {
                 OptiMobileConfig.throttledAnimations = !OptiMobileConfig.throttledAnimations;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.animationThrottle", OptiMobileConfig.throttledAnimations));
             })
             .dimensions(leftX, y, 100, 20)
             .build());
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.fpsCounter", OptiMobileConfig.showFps), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.fpsCounter", OptiMobileConfig.showFps), button -> {
                 OptiMobileConfig.showFps = !OptiMobileConfig.showFps;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.fpsCounter", OptiMobileConfig.showFps));
@@ -101,14 +101,14 @@ public class OptiMobileConfigScreen extends Screen {
             .build());
 
         y += 24;
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.adaptiveChunkLoading", OptiMobileConfig.adaptiveChunkLoadingEnabled), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.adaptiveChunkLoading", OptiMobileConfig.adaptiveChunkLoadingEnabled), button -> {
                 OptiMobileConfig.adaptiveChunkLoadingEnabled = !OptiMobileConfig.adaptiveChunkLoadingEnabled;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.adaptiveChunkLoading", OptiMobileConfig.adaptiveChunkLoadingEnabled));
             })
             .dimensions(leftX, y, 100, 20)
             .build());
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.lod", OptiMobileConfig.lodEnabled), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.lod", OptiMobileConfig.lodEnabled), button -> {
                 OptiMobileConfig.lodEnabled = !OptiMobileConfig.lodEnabled;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.lod", OptiMobileConfig.lodEnabled));
@@ -117,14 +117,14 @@ public class OptiMobileConfigScreen extends Screen {
             .build());
 
         y += 24;
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.textureStreaming", OptiMobileConfig.asyncTextureStreamingEnabled), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.textureStreaming", OptiMobileConfig.asyncTextureStreamingEnabled), button -> {
                 OptiMobileConfig.asyncTextureStreamingEnabled = !OptiMobileConfig.asyncTextureStreamingEnabled;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.textureStreaming", OptiMobileConfig.asyncTextureStreamingEnabled));
             })
             .dimensions(leftX, y, 100, 20)
             .build());
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.sceneSimplifier", OptiMobileConfig.sceneSimplifierEnabled), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.sceneSimplifier", OptiMobileConfig.sceneSimplifierEnabled), button -> {
                 OptiMobileConfig.sceneSimplifierEnabled = !OptiMobileConfig.sceneSimplifierEnabled;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.sceneSimplifier", OptiMobileConfig.sceneSimplifierEnabled));
@@ -133,14 +133,14 @@ public class OptiMobileConfigScreen extends Screen {
             .build());
 
         y += 24;
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.gpuProfile", OptiMobileConfig.gpuProfileEnabled), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.gpuProfile", OptiMobileConfig.gpuProfileEnabled), button -> {
                 OptiMobileConfig.gpuProfileEnabled = !OptiMobileConfig.gpuProfileEnabled;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.gpuProfile", OptiMobileConfig.gpuProfileEnabled));
             })
             .dimensions(leftX, y, 100, 20)
             .build());
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.backgroundTickThrottle", OptiMobileConfig.backgroundTickThrottleEnabled), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.backgroundTickThrottle", OptiMobileConfig.backgroundTickThrottleEnabled), button -> {
                 OptiMobileConfig.backgroundTickThrottleEnabled = !OptiMobileConfig.backgroundTickThrottleEnabled;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.backgroundTickThrottle", OptiMobileConfig.backgroundTickThrottleEnabled));
@@ -149,14 +149,14 @@ public class OptiMobileConfigScreen extends Screen {
             .build());
 
         y += 24;
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.soundBudget", OptiMobileConfig.soundBudgetEnabled), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.soundBudget", OptiMobileConfig.soundBudgetEnabled), button -> {
                 OptiMobileConfig.soundBudgetEnabled = !OptiMobileConfig.soundBudgetEnabled;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.soundBudget", OptiMobileConfig.soundBudgetEnabled));
             })
             .dimensions(leftX, y, 100, 20)
             .build());
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.telemetry", OptiMobileConfig.telemetryEnabled), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.telemetry", OptiMobileConfig.telemetryEnabled), button -> {
                 OptiMobileConfig.telemetryEnabled = !OptiMobileConfig.telemetryEnabled;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.telemetry", OptiMobileConfig.telemetryEnabled));
@@ -165,7 +165,7 @@ public class OptiMobileConfigScreen extends Screen {
             .build());
 
         y += 24;
-        this.addDrawableChild(ButtonWidget.builder(label("gui.optimobileplusz.overlay", OptiMobileConfig.showDetailedOverlay), button -> {
+        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.overlay", OptiMobileConfig.showDetailedOverlay), button -> {
                 OptiMobileConfig.showDetailedOverlay = !OptiMobileConfig.showDetailedOverlay;
                 OptiMobileConfig.save();
                 button.setMessage(label("gui.optimobileplusz.overlay", OptiMobileConfig.showDetailedOverlay));
@@ -174,7 +174,7 @@ public class OptiMobileConfigScreen extends Screen {
             .build());
 
         y += 28;
-        this.addDrawableChild(ButtonWidget.builder(Text.translatable("gui.optimobileplusz.reset"), button -> {
+        this.addDrawableChild(Button.builder(Text.translatable("gui.optimobileplusz.reset"), button -> {
                 OptiMobileConfig.fastClouds = true;
                 OptiMobileConfig.particlesEnabled = false;
                 OptiMobileConfig.showFps = true;
@@ -196,17 +196,17 @@ public class OptiMobileConfigScreen extends Screen {
             .dimensions(centerX - 100, y, 200, 20)
             .build());
 
-        this.addDrawableChild(ButtonWidget.builder(Text.translatable("gui.optimobileplusz.done"), button -> {
+        this.addDrawableChild(Button.builder(Text.translatable("gui.optimobileplusz.done"), button -> {
             this.client.setScreen(this.parent);
         }).dimensions(centerX - 100, this.height - 40, 200, 20)
         .build());
     }
 
     @Override
-    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        this.renderInGameBackground(context);
-        context.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 16, 0xFFFFFF);
-        context.drawCenteredTextWithShadow(this.textRenderer, Text.translatable("gui.optimobileplusz.description"), this.width / 2, 30, 0xAAAAFF);
-        super.render(context, mouseX, mouseY, delta);
+    public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float delta) {
+        this.extractBackground(context, mouseX, mouseY, delta);
+        context.centeredText(this.textRenderer, this.title, this.width / 2, 16, 0xFFFFFF);
+        context.centeredText(this.textRenderer, Text.translatable("gui.optimobileplusz.description"), this.width / 2, 30, 0xAAAAFF);
+        super.extractRenderState(context, mouseX, mouseY, delta);
     }
 }

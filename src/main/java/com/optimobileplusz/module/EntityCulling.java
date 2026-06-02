@@ -3,7 +3,7 @@ package com.optimobileplusz.module;
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptimizationState;
 import com.optimobileplusz.module.FrameBudgetManager;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 
 public class EntityCulling {
@@ -19,7 +19,7 @@ public class EntityCulling {
             return true;
         }
 
-        MinecraftClient client = MinecraftClient.getInstance();
+        Minecraft client = Minecraft.getInstance();
         if (client == null || client.player == null || entity == client.player) {
             return true;
         }

@@ -3,7 +3,7 @@ package com.optimobileplusz.module;
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.Log;
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
 
 public class TextureStreamingManager {
 
@@ -15,7 +15,7 @@ public class TextureStreamingManager {
             return;
         }
 
-        MinecraftClient client = MinecraftClient.getInstance();
+        Minecraft client = Minecraft.getInstance();
         if (client == null) {
             return;
         }

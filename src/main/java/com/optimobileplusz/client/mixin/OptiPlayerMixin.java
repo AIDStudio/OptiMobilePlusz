@@ -1,7 +1,7 @@
 package com.optimobileplusz.client.mixin;
 
 import com.optimobileplusz.client.ZoomState;
-import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,7 +20,7 @@ public abstract class OptiPlayerMixin {
             require = 0
     )
     private double modifyLookX(double x) {
-        if ((Object) this instanceof ClientPlayerEntity) {
+        if ((Object) this instanceof LocalPlayer) {
             double zoom = ZoomState.getZoomMultiplier();
             if (zoom > 1.0) {
                 return x / zoom;
@@ -37,7 +37,7 @@ public abstract class OptiPlayerMixin {
             require = 0
     )
     private double modifyLookY(double y) {
-        if ((Object) this instanceof ClientPlayerEntity) {
+        if ((Object) this instanceof LocalPlayer) {
             double zoom = ZoomState.getZoomMultiplier();
             if (zoom > 1.0) {
                 return y / zoom;

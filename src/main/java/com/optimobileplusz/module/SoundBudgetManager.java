@@ -2,7 +2,7 @@ package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.sound.SoundInstance;
 
 public class SoundBudgetManager {
@@ -20,7 +20,7 @@ public class SoundBudgetManager {
             return false;
         }
 
-        MinecraftClient client = MinecraftClient.getInstance();
+        Minecraft client = Minecraft.getInstance();
         if (client == null || client.player == null) {
             return false;
         }

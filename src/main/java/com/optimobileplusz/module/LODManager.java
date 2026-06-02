@@ -3,7 +3,7 @@ package com.optimobileplusz.module;
 import com.optimobileplusz.client.monitor.FpsMonitor;
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 
 public class LODManager {
@@ -13,7 +13,7 @@ public class LODManager {
             return;
         }
 
-        MinecraftClient client = MinecraftClient.getInstance();
+        Minecraft client = Minecraft.getInstance();
         if (client == null || client.world == null) {
             return;
         }
@@ -34,7 +34,7 @@ public class LODManager {
             return false;
         }
 
-        MinecraftClient client = MinecraftClient.getInstance();
+        Minecraft client = Minecraft.getInstance();
         if (client == null || client.player == null) {
             return false;
         }

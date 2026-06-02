@@ -3,7 +3,7 @@ package com.optimobileplusz.module;
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.Log;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -21,7 +21,7 @@ public class TelemetryManager {
             return;
         }
 
-        MinecraftClient client = MinecraftClient.getInstance();
+        Minecraft client = Minecraft.getInstance();
         if (client == null) {
             return;
         }

@@ -2,8 +2,8 @@ package com.optimobileplusz.client.mixin;
 
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.module.HudOverlayManager;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.text.Text;
@@ -16,8 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class HudMixin {
 
     @Inject(method = "render", at = @At("TAIL"))
-    private void onRender(DrawContext context, RenderTickCounter tickCounter, CallbackInfo ci) {
-        MinecraftClient client = MinecraftClient.getInstance();
+    private void onRender(GuiGraphicsExtractor context, RenderTickCounter tickCounter, CallbackInfo ci) {
+        Minecraft client = Minecraft.getInstance();
 
         if (client != null && client.world != null && OptiMobileConfig.showFps) {
             if (!client.getDebugHud().shouldShowDebugHud()) {
@@ -54,7 +54,7 @@ public class HudMixin {
     }
 
     // Frissített rajzoló, ami már paraméterként kapja a színt (int color)
-    private void drawPixelNum(DrawContext context, int num, int x, int y, int color) {
+    private void drawPixelNum(GuiGraphicsExtractor context, int num, int x, int y, int color) {
         int[] digits = {
             0x7b6f, // 0
             0x2492, // 1
@@ -80,7 +80,7 @@ public class HudMixin {
         }
     }
 
-    private void drawCharFPS(DrawContext context, int x, int y) {
+    private void drawCharFPS(GuiGraphicsExtractor context, int x, int y) {
         int c = 0xFFFFAA00; // Narancssárga
 
         // --- 'F' BETŰ ---

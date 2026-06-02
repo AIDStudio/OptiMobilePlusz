@@ -1,6 +1,6 @@
 package com.optimobileplusz.client.monitor;
 
-import net.minecraft.client.MinecraftClient; // Yarn alatt MinecraftClient a neve!
+import net.minecraft.client.Minecraft; // Yarn alatt Minecraft a neve!
 
 
 public class FpsMonitor {
@@ -8,8 +8,8 @@ public class FpsMonitor {
     private static int currentFPS = 0;
 
     public static void update() {
-        // A MinecraftClient.getInstance() használata kliensoldali kód
-        currentFPS = MinecraftClient.getInstance().getCurrentFps();
+        // A Minecraft.getInstance() használata kliensoldali kód
+        currentFPS = Minecraft.getInstance().getCurrentFps();
     }
 
     public static int getFPS() {

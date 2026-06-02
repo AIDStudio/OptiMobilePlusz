@@ -1,7 +1,7 @@
 package com.optimobileplusz.client.mixin;
 
 import com.optimobileplusz.module.EntityCulling;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.entity.Entity;
@@ -15,7 +15,7 @@ public abstract class EntityRendererMixin<T extends Entity> {
 
     @Inject(method = "shouldRender", at = @At("HEAD"), cancellable = true)
     private void onShouldRender(T entity, Frustum frustum, double x, double y, double z, CallbackInfoReturnable<Boolean> cir) {
-        MinecraftClient client = MinecraftClient.getInstance();
+        Minecraft client = Minecraft.getInstance();
         
         // 1. Ha az entitás a saját karakterünk, azt mindenképpen rajzoljuk ki (F5 mód miatt)
         if (client == null || entity == client.player) {

@@ -12,7 +12,7 @@ import com.optimobileplusz.module.SceneSimplifier;
 import com.optimobileplusz.module.TextureStreamingManager;
 import com.optimobileplusz.module.TelemetryManager;
 import com.optimobileplusz.module.ThermalProtection;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
 
 public class OptiCore {
     private static OptimizationState currentState = OptimizationState.EXTREME;
@@ -43,7 +43,7 @@ public class OptiCore {
      * Ha EXTREME módban vagyunk, a távolság limit 16 blokk (1 chunk), egyébként 32 blokk.
      */
     public static boolean shouldThrottleAnimation(double blockX, double blockY, double blockZ) {
-        MinecraftClient client = MinecraftClient.getInstance();
+        Minecraft client = Minecraft.getInstance();
         if (client == null || client.player == null) return false;
 
         // Távolság négyzetének kiszámítása a hatékonyság érdekében

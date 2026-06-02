@@ -1,12 +1,12 @@
 package com.optimobileplusz.module;
 
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.option.GameOptions;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.Options;
 
 public class RenderThrottle {
     public static void update(OptimizationState state) {
-        GameOptions opt = MinecraftClient.getInstance().options;
+        Options opt = Minecraft.getInstance().options;
         if (opt == null) return;
         
         // Árnyékok kikapcsolása
