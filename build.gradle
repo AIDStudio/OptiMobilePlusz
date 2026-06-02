@@ -46,7 +46,7 @@ loom {
     noIntermediateMappings()
     dontRemapOutputs()
     layered {
-        mappings(files("libs/official-mappings.jar")) {
+        mappings(file("libs/official-mappings.jar")) {
             mappingPath("mappings/mappings.tiny")
             fallbackNamespaces("official", "named")
         }
