@@ -34,7 +34,10 @@ repositories {
 // Disable remapping of outputs (we rely on Mojang's official names for 26.1+)
 loom {
     dontRemapOutputs()
-    mappingsFile = file('libs/official-mappings.jar')
+}
+
+gradle.projectsEvaluated {
+    loom.mappingsFile.set(file('libs/official-mappings.jar'))
 }
 
 dependencies {
