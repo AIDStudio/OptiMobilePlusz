@@ -33,15 +33,23 @@ loom {
 	}
 }
 
+// Disable remapping of outputs (we rely on Mojang's official names for 26.1+)
+loom {
+    dontRemapOutputs()
+}
+
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:intermediary:${project.mappings_version}"
+    // Use a local identity mappings jar so Loom finds a `named` namespace.
+    mappings files('libs/official-mappings.jar')
 
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    // For Minecraft 26.1+, Minecraft is unobfuscated — no intermediary/yarn mappings required.
+    // Use the new Loom (non-remapping) workflow: use standard configurations `implementation` / `compileOnly`.
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-    // Mod Menu integráció
-    modImplementation "com.terraformersmc:modmenu:11.0.1"
+    // Mod Menu integráció (compile-time/runtime dependency)
+    implementation "com.terraformersmc:modmenu:11.0.1"
 }
 
 processResources {
