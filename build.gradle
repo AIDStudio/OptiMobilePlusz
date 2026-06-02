@@ -24,15 +24,6 @@ repositories {
     mavenCentral() // Általános Java könyvtárak
 }
 
-loom {
-	// KIVÉVE: splitEnvironmentSourceSets() - Így sokkal stabilabb Termuxon!
-	mods {
-		"optimobileplusz" {
-			sourceSet sourceSets.main
-		}
-	}
-}
-
 // Disable remapping of outputs (we rely on Mojang's official names for 26.1+)
 loom {
     dontRemapOutputs()
@@ -47,10 +38,6 @@ dependencies {
     // Use the new Loom (non-remapping) workflow: use standard configurations `implementation` / `compileOnly`.
     implementation "net.fabricmc:fabric-loader:${project.loader_version}"
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-
-    // Official mapping compile-time dependency for Minecraft classes.
-    compileOnly "com.mojang:minecraft:${project.minecraft_version}"
-    compileOnly "org.spongepowered:mixin:0.8.5"
 
     // Mod Menu integráció (compile-time/runtime dependency)
     implementation "com.terraformersmc:modmenu:11.0.1"
