@@ -2,9 +2,8 @@ package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptimizationState;
-import com.optimobileplusz.module.FrameBudgetManager;
-import net.minecraft.Entity;
-import net.minecraft.Minecraft;
+import net.minecraft.entity.Entity; // Frissített import
+import net.minecraft.client.MinecraftClient; // Frissített import
 
 public class EntityCulling {
 
@@ -19,12 +18,18 @@ public class EntityCulling {
             return true;
         }
 
-        Minecraft client = Minecraft.method_1551();
-        if (client == null || client.field_1724 == null || entity == client.field_1724) {
+        // 1. A Minecraft.method_1551() helyett a hivatalos getInstance() használandó
+        MinecraftClient client = MinecraftClient.getInstance();
+        
+        // 2. A field_1724 helyett a 'player' mezőt használjuk
+        if (client == null || client.player == null || entity == client.player) {
             return true;
         }
 
-        double distanceSq = client.field_1724.method_5649(entity.method_23317(), entity.method_23318(), entity.method_23321());
+        // 3. A squaredDistanceTo() a hivatalos metódus név a method_5649 helyett.
+        // Az entity.getX(), getY(), getZ() a hivatalos nevek a method_23317() stb. helyett.
+        double distanceSq = client.player.squaredDistanceTo(entity.getX(), entity.getY(), entity.getZ());
+        
         double limit;
 
         switch (currentState) {

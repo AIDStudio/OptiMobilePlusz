@@ -2,7 +2,7 @@ package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.Minecraft;
+import net.minecraft.client.MinecraftClient;
 
 public class ChunkLoadManager {
 
@@ -11,16 +11,22 @@ public class ChunkLoadManager {
             return;
         }
 
-        Minecraft client = Minecraft.method_1551();
-        if (client == null || client.field_1724 == null || client.field_1687 == null) {
+        // 1. A Minecraft.method_1551() helyett a hivatalos getInstance() használandó
+        MinecraftClient client = MinecraftClient.getInstance();
+        
+        // 2. A field_1724 -> player, a field_1687 -> world (a modern Mojang nevek)
+        if (client == null || client.player == null || client.world == null) {
             return;
         }
 
-        double speed = client.field_1724.method_18798().method_1027();
+        // 3. A velocity lekérése (method_18798() -> getVelocity(), method_1027() -> length())
+        double speed = client.player.getVelocity().length();
 
         if (speed > 0.05) {
             int distance = (state == OptimizationState.EXTREME) ? 4 : (state == OptimizationState.PERFORMANCE ? 5 : 6);
-            client.field_1690.method_42510().method_41748(distance);
+            
+            // 4. A viewDistance beállítása (field_1690 -> options)
+            client.options.getViewDistance().setValue(distance);
         }
     }
 

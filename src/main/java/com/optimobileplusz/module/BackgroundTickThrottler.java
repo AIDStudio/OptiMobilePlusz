@@ -1,7 +1,7 @@
 package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
-import net.minecraft.Minecraft;
+import net.minecraft.client.MinecraftClient;
 
 public class BackgroundTickThrottler {
 
@@ -10,12 +10,15 @@ public class BackgroundTickThrottler {
             return false;
         }
 
-        Minecraft client = Minecraft.method_1551();
+        // A Minecraft.method_1551() helyett a hivatalos getInstance() használandó
+        MinecraftClient client = MinecraftClient.getInstance();
         if (client == null) {
             return false;
         }
 
-        if (!client.method_1569() && client.field_1687 != null) {
+        // isWindowFocused() a hivatalos metódus neve a method_1569() helyett.
+        // A client.world a hivatalos név a field_1687 helyett.
+        if (!client.isWindowFocused() && client.world != null) {
             return true;
         }
 

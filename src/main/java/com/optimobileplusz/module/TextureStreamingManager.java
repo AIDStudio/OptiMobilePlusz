@@ -3,7 +3,7 @@ package com.optimobileplusz.module;
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.Log;
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.Minecraft;
+import net.minecraft.client.MinecraftClient; // Frissített import
 
 public class TextureStreamingManager {
 
@@ -15,7 +15,8 @@ public class TextureStreamingManager {
             return;
         }
 
-        Minecraft client = Minecraft.method_1551();
+        // 1. A Minecraft.method_1551() helyett a hivatalos getInstance() használandó
+        MinecraftClient client = MinecraftClient.getInstance();
         if (client == null) {
             return;
         }

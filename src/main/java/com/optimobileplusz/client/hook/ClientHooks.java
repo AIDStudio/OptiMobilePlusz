@@ -1,13 +1,16 @@
 package com.optimobileplusz.client.hook;
 
 import com.optimobileplusz.client.event.OptiClientTickEvents;
-import net.minecraft.Minecraft;
+import net.minecraft.client.MinecraftClient; // Helyes import
 
 public class ClientHooks {
 
-    // Ezt a metódust valószínűleg egy Mixin-ből hívod meg
+    /**
+     * Ezt a metódust hívja meg a rendszer egy Mixin-ből.
+     * Modernizálva a Mojang mappinghez.
+     */
     public static void onClientTick() {
-        // Most már létezik a tick metódus, ami vár egy MinecraftClient példányt
-        OptiClientTickEvents.tick(Minecraft.method_1551());
+        // A method_1551() helyett a getInstance() metódust használjuk
+        OptiClientTickEvents.tick(MinecraftClient.getInstance());
     }
 }

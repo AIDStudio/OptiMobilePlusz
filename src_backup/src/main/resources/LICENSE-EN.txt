@@ -1,0 +1,21 @@
+OptiMobilePlus – License Agreement and Terms of Use!
+
+1. Ownership and Source Code:
+OptimobilePlus (hereinafter: "MOD") is the sole intellectual property of the creator.
+The MOD is open source.
+Decrypting the source code (decompilation), modifying it, incorporating any detail into another project or rewriting the mod is strictly prohibited.
+
+2. Distribution ban:
+Uploading and distributing MOD files (.jar) to any other website, hosting, or social media is not permitted without the creator's permission.
+The mod can only be downloaded through the official CurseForge and Modrinth interfaces.
+
+3. Modpack Usage:
+The mod can be freely and without prior permission request into any modpack (be it public or private), if:
+the name of the creator and the original name of the mod is clearly indicated.
+The modpack describes a link to the mod's official CurseForge or Modrinth page.
+
+4. Content production:
+Mod can be freely presented in videos and broadcasts (youtube, Twitch, Tiktok, etc.) provided that the official download link is indicated in the description.
+
+5. Responsibility:
+The creator is not responsible for possible performance problems or software errors resulting from the use of the mod.

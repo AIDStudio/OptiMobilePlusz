@@ -1,27 +1,29 @@
 package com.optimobileplusz.module;
 
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.Minecraft;
-import net.minecraft.class_315;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.option.GameOptions;
 
 public class RenderThrottle {
     public static void update(OptimizationState state) {
-        class_315 opt = Minecraft.method_1551().field_1690;
-        if (opt == null) return;
+        // 1. MinecraftClient.getInstance() a method_1551() helyett
+        MinecraftClient client = MinecraftClient.getInstance();
+        if (client == null) return;
         
-        // Árnyékok kikapcsolása
-        opt.method_42435().method_41748(false);
+        // 2. GameOptions a class_315 (field_1690) helyett
+        GameOptions options = client.options;
+        if (options == null) return;
         
-        // [TÖRÖLVE] opt.getViewDistance().setValue(4); 
-        // Ezt most már az OptiCore kezeli dinamikusan az FPS alapján!
+        // 3. Árnyékok kikapcsolása (getEntityShadows() a method_42435() helyett)
+        options.getEntityShadows().setValue(false);
         
-        // Szimulációs távolság minimumra (8 chunk mobilon ideális)
-        opt.method_42510().method_41748(8);
+        // 4. Szimulációs távolság beállítása (getSimulationDistance() a method_42510() helyett)
+        options.getSimulationDistance().setValue(8);
         
-        // Kamera imbolygás kikapcsolása
-        opt.method_42448().method_41748(false);
+        // 5. Kamera imbolygás kikapcsolása (getBobView() a method_42448() helyett)
+        options.getBobView().setValue(false);
         
-        // Fókuszvesztéskor megállás javítva (egyenesen összefűzve)
-        opt.field_1837 = true;
+        // 6. Fókuszvesztéskor megállás javítása (pauseOnLostFocus a field_1837 helyett)
+        options.pauseOnLostFocus = true;
     }
 }

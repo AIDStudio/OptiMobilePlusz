@@ -2,7 +2,7 @@ package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.Minecraft;
+import net.minecraft.client.MinecraftClient; // Frissített import
 
 public class AnimationThrottle {
 
@@ -11,12 +11,14 @@ public class AnimationThrottle {
             return false;
         }
 
-        Minecraft client = Minecraft.method_1551();
-        if (client == null || client.field_1724 == null || client.field_1687 == null) {
+        MinecraftClient client = MinecraftClient.getInstance();
+        // A 'player' és 'world' a modern Mojang elnevezések
+        if (client == null || client.player == null || client.world == null) {
             return false;
         }
 
-        long worldTime = client.field_1687.method_75260();
+        // A worldTime a world.getTime() hívással érhető el a modern mappingben
+        long worldTime = client.world.getTime();
 
         switch (state) {
             case EXTREME:

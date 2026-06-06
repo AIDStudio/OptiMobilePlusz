@@ -5,30 +5,32 @@ import com.optimobileplusz.core.Log;
 import com.optimobileplusz.core.OptiCore;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.minecraft.class_304;
-import net.minecraft.class_3675;
+import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
 public class OptimobileClient implements ClientModInitializer {
 
-    public static class_304 zoomKey;
+    public static KeyBinding zoomKey;
 
     @Override
     public void onInitializeClient() {
         
         com.optimobileplusz.config.OptiMobileConfig.load();
         
-        // Ez a megoldás: A KeyBinding.Category enum-on keresztül hivatkozunk a kategóriára.
-        // Az 1.21.1-es Yarn mappingben ez a legbiztosabb módja a Category objektum átadásának.
-        zoomKey = KeyBindingHelper.registerKeyBinding(new class_304(
-                "key.optimobileplusz.zoom", 
-                class_3675.class_307.field_1668,
-                GLFW.GLFW_KEY_C, 
-                class_304.class_11900.field_62556 // <--- Ez itt a belső Enum hivatkozás
+        // Hivatalos Mojang mapping szerinti KeyBinding regisztráció
+        // Az InputUtil.Type.KEYSYM a modern szabvány a billentyűk kezelésére
+        zoomKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "key.optimobileplusz.zoom",
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_C,
+                "category.optimobileplusz.general" 
         ));
         
+        // Az események regisztrálása
         OptiClientTickEvents.register();
-        Log.info("OptiMobilePlusz kliens oldali funkciok betöltve!");
+        
+        Log.info("OptiMobilePlusz kliens oldali funkciók betöltve!");
         OptiCore.initialize();
     }
 }

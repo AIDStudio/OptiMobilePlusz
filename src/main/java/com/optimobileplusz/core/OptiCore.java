@@ -1,18 +1,7 @@
 package com.optimobileplusz.core;
 
-import com.optimobileplusz.module.AdaptiveEngine;
-import com.optimobileplusz.module.ChunkLoadManager;
-import com.optimobileplusz.module.EntityCulling;
-import com.optimobileplusz.module.FrameBudgetManager;
-import com.optimobileplusz.module.GpuProfileManager;
-import com.optimobileplusz.module.LODManager;
-import com.optimobileplusz.module.ParticleLimiter;
-import com.optimobileplusz.module.RenderThrottle;
-import com.optimobileplusz.module.SceneSimplifier;
-import com.optimobileplusz.module.TextureStreamingManager;
-import com.optimobileplusz.module.TelemetryManager;
-import com.optimobileplusz.module.ThermalProtection;
-import net.minecraft.Minecraft;
+import com.optimobileplusz.module.*;
+import net.minecraft.client.MinecraftClient; // Frissített import
 
 public class OptiCore {
     private static OptimizationState currentState = OptimizationState.EXTREME;
@@ -24,7 +13,7 @@ public class OptiCore {
     public static void update() {
         currentState = AdaptiveEngine.update(currentState);
 
-        // Alapvető optimalizációk futtatása minden tickben
+        // Optimalizációk futtatása
         RenderThrottle.update(currentState);
         ParticleLimiter.update(currentState);
         FrameBudgetManager.update(currentState);
@@ -39,15 +28,17 @@ public class OptiCore {
     }
 
     /**
-     * Megmondja, hogy egy adott pozíció túl messze van-e ahhoz, hogy animáljuk a textúráját.
-     * Ha EXTREME módban vagyunk, a távolság limit 16 blokk (1 chunk), egyébként 32 blokk.
+     * Megmondja, hogy animáljuk-e a textúrát a távolság alapján.
      */
     public static boolean shouldThrottleAnimation(double blockX, double blockY, double blockZ) {
-        Minecraft client = Minecraft.method_1551();
-        if (client == null || client.field_1724 == null) return false;
+        // A method_1551() helyett a getInstance() használandó
+        MinecraftClient client = MinecraftClient.getInstance();
+        
+        // A field_1724 helyett a 'player' mezőt használjuk
+        if (client == null || client.player == null) return false;
 
-        // Távolság négyzetének kiszámítása a hatékonyság érdekében
-        double distanceSq = client.field_1724.method_5649(blockX, blockY, blockZ);
+        // Távolság négyzetének kiszámítása
+        double distanceSq = client.player.squaredDistanceTo(blockX, blockY, blockZ);
         double maxDistance = (currentState == OptimizationState.EXTREME) ? 256.0 : 1024.0;
 
         return distanceSq > maxDistance;
@@ -55,9 +46,5 @@ public class OptiCore {
 
     public static OptimizationState getState() {
         return currentState;
-    }
-
-    public static void setState(OptimizationState state) {
-        currentState = state;
     }
 }

@@ -1,9 +1,8 @@
 package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
-import com.optimobileplusz.core.Log;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.Minecraft;
+import net.minecraft.client.MinecraftClient; // Frissített import
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
@@ -20,14 +19,18 @@ public class TelemetryManager {
             return;
         }
 
-        Minecraft client = Minecraft.method_1551();
+        // 1. A Minecraft.method_1551() helyett a hivatalos getInstance()
+        MinecraftClient client = MinecraftClient.getInstance();
         if (client == null) {
             return;
         }
 
         Properties prop = new Properties();
         prop.setProperty("timestamp", Instant.now().toString());
-        prop.setProperty("fps", String.valueOf(client.method_47599()));
+        
+        // 2. A method_47599() helyett a hivatalos getCurrentFps()
+        prop.setProperty("fps", String.valueOf(client.getCurrentFps()));
+        
         prop.setProperty("particles", String.valueOf(ParticleLimiter.getParticleMultiplier()));
         prop.setProperty("frameBudgetActive", String.valueOf(FrameBudgetManager.isBudgetActive()));
 

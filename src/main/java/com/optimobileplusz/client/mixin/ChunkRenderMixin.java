@@ -1,25 +1,28 @@
 package com.optimobileplusz.client.mixin;
 
-import net.minecraft.class_846;
+import net.minecraft.client.render.chunk.ChunkBuilder;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(class_846.class)
+@Mixin(ChunkBuilder.class)
 public class ChunkRenderMixin {
 
     /**
-     * Yarn 1.21.1-ben a ChunkRenderDispatcher helyett ChunkBuilder-t használunk.
-     * A "sendChunks" vagy "scheduleRunTasks" metódusok felelősek a feladatok ütemezéséért.
+     * A Mojang mappingben a ChunkRenderDispatcher megfelelője a ChunkBuilder.
+     * A scheduleRunTasks metódus az újabb verziókban is elérhető, 
+     * amely a chunkok feladatainak ütemezését végzi.
      */
     @Inject(method = "scheduleRunTasks", at = @At("HEAD"))
     private void onScheduleRunTasks(CallbackInfo ci) {
         // Megemeljük a prioritást, de korlátozzuk a processzor túlhajtását
         Thread currentThread = Thread.currentThread();
+        
+        // A \"Chunk Batcher\" szálak kezelése
         if (currentThread.getName().contains("Chunk Batcher")) {
             // A NORM_PRIORITY - 1 biztosítja, hogy a chunkok töltődjenek, 
-            // de ne akadjon meg tőle a játék (fő játékszál).
+            // de ne akadjon meg tőle a fő játékszál (main thread).
             currentThread.setPriority(Thread.NORM_PRIORITY - 1); 
         }
     }

@@ -1,13 +1,13 @@
 package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
-import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.class_1113;
-import net.minecraft.Minecraft;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.sound.SoundInstance; // Hivatalos SoundInstance
+import net.minecraft.sound.SoundCategory;      // Hivatalos kategóriák
 
 public class SoundBudgetManager {
 
-    public static boolean shouldSkipSound(class_1113 sound) {
+    public static boolean shouldSkipSound(SoundInstance sound) {
         if (!OptiMobileConfig.soundBudgetEnabled) {
             return false;
         }
@@ -16,17 +16,22 @@ public class SoundBudgetManager {
             return false;
         }
 
-        if (sound.method_4774() != null && sound.method_4774().equals(net.minecraft.class_3419.field_15250)) {
+        // A zenei hangokat (Music) ne szűrjük ki
+        if (sound.getCategory() != null && sound.getCategory().equals(SoundCategory.MUSIC)) {
             return false;
         }
 
-        Minecraft client = Minecraft.method_1551();
-        if (client == null || client.field_1724 == null) {
+        MinecraftClient client = MinecraftClient.getInstance();
+        if (client == null || client.player == null) {
             return false;
         }
 
-        double volume = sound.method_4781();
-        double distance = client.field_1724.method_5649(sound.method_4784(), sound.method_4779(), sound.method_4778());
+        // A hangerő és távolság alapján történő szűrés
+        double volume = sound.getVolume();
+        // squaredDistanceTo a hivatalos metódus név
+        double distance = client.player.squaredDistanceTo(sound.getX(), sound.getY(), sound.getZ());
+        
+        // Ha túl messze van és halk, kihagyjuk
         if (distance > 64.0 * 64.0 && volume < 0.7) {
             return true;
         }

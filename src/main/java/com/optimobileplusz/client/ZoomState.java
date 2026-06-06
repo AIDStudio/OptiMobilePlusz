@@ -1,6 +1,6 @@
 package com.optimobileplusz.client;
 
-import net.minecraft.class_3532;
+import net.minecraft.util.math.MathHelper;
 
 public class ZoomState {
 
@@ -19,7 +19,9 @@ public class ZoomState {
 
     public static void tickZoom(boolean zooming) {
         double target = zooming ? TARGET_ZOOM_LEVEL : 1.0;
-        currentZoom = class_3532.method_16436(ZOOM_SMOOTHING, currentZoom, target);
+        
+        // A class_3532.method_16436 helyett a MathHelper.lerp a helyes Mojang-mapping
+        currentZoom = MathHelper.lerp(ZOOM_SMOOTHING, currentZoom, target);
 
         if (Math.abs(currentZoom - 1.0) < 0.001) {
             currentZoom = 1.0;

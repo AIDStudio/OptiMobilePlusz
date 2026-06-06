@@ -1,7 +1,7 @@
 package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
-import net.minecraft.Minecraft;
+import net.minecraft.client.MinecraftClient; // Frissített import
 
 public class HudOverlayManager {
 
@@ -10,14 +10,17 @@ public class HudOverlayManager {
     }
 
     public static String getOverlayText() {
-        Minecraft client = Minecraft.method_1551();
+        // A Minecraft.method_1551() helyett a hivatalos getInstance() használandó
+        MinecraftClient client = MinecraftClient.getInstance();
         if (client == null) {
             return "";
         }
 
-        int fps = client.method_47599();
+        // A method_47599() obfuszkált név helyett a hivatalos getCurrentFps() használandó
+        int fps = client.getCurrentFps();
         int particleRate = ParticleLimiter.getParticleMultiplier();
         boolean budget = FrameBudgetManager.isBudgetActive();
+        
         return String.format("FPS: %d  Budget: %s  Particles: %d%%", fps, budget ? "ON" : "OFF", particleRate);
     }
 }
