@@ -1,7 +1,7 @@
 {
   "key.optimobileplusz.zoom": "Opti Zoom",
-  "category.optimobileplusz": "OptiMobilePlusz",
-  "gui.optimobileplusz.title": "OptiMobilePlusz Beállítások",
+  "category.optimobileplusz": "OptiElitePlusz",
+  "gui.optimobileplusz.title": "OptiEliteePlusz Beállítások",
   "gui.optimobileplusz.description": "Kapcsold be és ki az optimalizáló modulokat.",
   "gui.optimobileplusz.currentMode": "Aktuális mód: %s",
   "gui.optimobileplusz.section.general": "Általános beállítások",

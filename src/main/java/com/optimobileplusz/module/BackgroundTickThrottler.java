@@ -1,7 +1,7 @@
 package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
-import net.minecraft.client.Minecraft;
+import net.minecraft.Minecraft;
 
 public class BackgroundTickThrottler {
 
@@ -10,12 +10,12 @@ public class BackgroundTickThrottler {
             return false;
         }
 
-        Minecraft client = Minecraft.getInstance();
+        Minecraft client = Minecraft.method_1551();
         if (client == null) {
             return false;
         }
 
-        if (!client.isWindowFocused() && client.world != null) {
+        if (!client.method_1569() && client.field_1687 != null) {
             return true;
         }
 

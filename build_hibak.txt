@@ -1,0 +1,996 @@
+
+> Configure project :
+Fabric Loom: 1.16.3
+
+> Task :compileJava
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:4: error: cannot find symbol
+import net.minecraft.class_1297;
+                    ^
+  symbol:   class class_1297
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:5: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:6: error: cannot find symbol
+import net.minecraft.class_4604;
+                    ^
+  symbol:   class class_4604
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:7: error: cannot find symbol
+import net.minecraft.class_897;
+                    ^
+  symbol:   class class_897
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:14: error: cannot find symbol
+public abstract class EntityRendererMixin<T extends class_1297> {
+                                                    ^
+  symbol: class class_1297
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:17: error: cannot find symbol
+    private void onShouldRender(T entity, class_4604 frustum, double x, double y, double z, CallbackInfoReturnable<Boolean> cir) {
+                                          ^
+  symbol:   class class_4604
+  location: class EntityRendererMixin<T>
+  where T is a type-variable:
+    T declared in class EntityRendererMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:11: error: cannot find symbol
+import net.minecraft.class_2394;
+                    ^
+  symbol:   class class_2394
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:12: error: cannot find symbol
+import net.minecraft.class_702;
+                    ^
+  symbol:   class class_702
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:13: error: cannot find symbol
+import net.minecraft.class_703;
+                    ^
+  symbol:   class class_703
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:20: error: cannot find symbol
+    private void handleParticles(class_2394 parameters, double x, double y, double z, double velocityX, double velocityY, double velocityZ, CallbackInfoReturnable<class_703> cir) {
+                                 ^
+  symbol:   class class_2394
+  location: class ParticleMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:20: error: cannot find symbol
+    private void handleParticles(class_2394 parameters, double x, double y, double z, double velocityX, double velocityY, double velocityZ, CallbackInfoReturnable<class_703> cir) {
+                                                                                                                                                                   ^
+  symbol:   class class_703
+  location: class ParticleMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/CloudMixin.java:4: error: cannot find symbol
+import net.minecraft.class_315;
+                    ^
+  symbol:   class class_315
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/CloudMixin.java:5: error: cannot find symbol
+import net.minecraft.class_4063;
+                    ^
+  symbol:   class class_4063
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/CloudMixin.java:14: error: cannot find symbol
+    private void checkCloudConfig(CallbackInfoReturnable<class_4063> cir) {
+                                                         ^
+  symbol:   class class_4063
+  location: class CloudMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/LightUpdateMixin.java:4: error: cannot find symbol
+import net.minecraft.class_3568;
+                    ^
+  symbol:   class class_3568
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:5: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:6: error: cannot find symbol
+import net.minecraft.class_329;
+                    ^
+  symbol:   class class_329
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:7: error: cannot find symbol
+import net.minecraft.class_332;
+                    ^
+  symbol:   class class_332
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:8: error: cannot find symbol
+import net.minecraft.class_9779;
+                    ^
+  symbol:   class class_9779
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:18: error: cannot find symbol
+    private void onRender(class_332 context, class_9779 tickCounter, CallbackInfo ci) {
+                          ^
+  symbol:   class class_332
+  location: class HudMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:18: error: cannot find symbol
+    private void onRender(class_332 context, class_9779 tickCounter, CallbackInfo ci) {
+                                             ^
+  symbol:   class class_9779
+  location: class HudMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:56: error: cannot find symbol
+    private void drawPixelNum(class_332 context, int num, int x, int y, int color) {
+                              ^
+  symbol:   class class_332
+  location: class HudMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:82: error: cannot find symbol
+    private void drawCharFPS(class_332 context, int x, int y) {
+                             ^
+  symbol:   class class_332
+  location: class HudMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/SpriteContentsMixin.java:6: error: cannot find symbol
+import net.minecraft.class_1059;
+                    ^
+  symbol:   class class_1059
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/SpriteContentsMixin.java:7: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ChunkRenderMixin.java:3: error: cannot find symbol
+import net.minecraft.class_846;
+                    ^
+  symbol:   class class_846
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiZoomMixin.java:5: error: cannot find symbol
+import net.minecraft.class_757;
+                    ^
+  symbol:   class class_757
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiPlayerMixin.java:4: error: cannot find symbol
+import net.minecraft.class_1297;
+                    ^
+  symbol:   class class_1297
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiPlayerMixin.java:5: error: cannot find symbol
+import net.minecraft.class_746;
+                    ^
+  symbol:   class class_746
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:8: error: cannot find symbol
+import net.minecraft.class_304;
+                    ^
+  symbol:   class class_304
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:9: error: cannot find symbol
+import net.minecraft.class_3675;
+                    ^
+  symbol:   class class_3675
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:14: error: cannot find symbol
+    public static class_304 zoomKey;
+                  ^
+  symbol:   class class_304
+  location: class OptimobileClient
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/event/OptiClientTickEvents.java:7: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/event/OptiClientTickEvents.java:16: error: cannot find symbol
+    public static void tick(class_310 client) {
+                            ^
+  symbol:   class class_310
+  location: class OptiClientTickEvents
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/monitor/FpsMonitor.java:3: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/hook/ClientHooks.java:4: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:5: error: cannot find symbol
+import net.minecraft.class_2561;
+                    ^
+  symbol:   class class_2561
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:6: error: cannot find symbol
+import net.minecraft.class_332;
+                    ^
+  symbol:   class class_332
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:7: error: cannot find symbol
+import net.minecraft.class_4185;
+                    ^
+  symbol:   class class_4185
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:8: error: cannot find symbol
+import net.minecraft.class_437;
+                    ^
+  symbol:   class class_437
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:10: error: cannot find symbol
+public class OptiMobileConfigScreen extends class_437 {
+                                            ^
+  symbol: class class_437
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:11: error: cannot find symbol
+    private final class_437 parent;
+                  ^
+  symbol:   class class_437
+  location: class OptiMobileConfigScreen
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:13: error: cannot find symbol
+    public OptiMobileConfigScreen(class_437 parent) {
+                                  ^
+  symbol:   class class_437
+  location: class OptiMobileConfigScreen
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:18: error: cannot find symbol
+    private class_2561 label(String key, boolean value) {
+            ^
+  symbol:   class class_2561
+  location: class OptiMobileConfigScreen
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:22: error: cannot find symbol
+    private class_2561 stateLabel() {
+            ^
+  symbol:   class class_2561
+  location: class OptiMobileConfigScreen
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:206: error: cannot find symbol
+    public void method_25394(class_332 context, int mouseX, int mouseY, float delta) {
+                             ^
+  symbol:   class class_332
+  location: class OptiMobileConfigScreen
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptiMobileModMenu.java:4: error: package com.terraformersmc.modmenu.api does not exist
+import com.terraformersmc.modmenu.api.ConfigScreenFactory;
+                                     ^
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptiMobileModMenu.java:5: error: package com.terraformersmc.modmenu.api does not exist
+import com.terraformersmc.modmenu.api.ModMenuApi;
+                                     ^
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptiMobileModMenu.java:7: error: cannot find symbol
+public class OptiMobileModMenu implements ModMenuApi {
+                                          ^
+  symbol: class ModMenuApi
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptiMobileModMenu.java:9: error: cannot find symbol
+    public ConfigScreenFactory<?> getModConfigScreenFactory() {
+           ^
+  symbol:   class ConfigScreenFactory
+  location: class OptiMobileModMenu
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/ZoomState.java:3: error: cannot find symbol
+import net.minecraft.class_3532;
+                    ^
+  symbol:   class class_3532
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/core/OptiCore.java:15: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/RenderThrottle.java:4: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/RenderThrottle.java:5: error: cannot find symbol
+import net.minecraft.class_315;
+                    ^
+  symbol:   class class_315
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/EntityCulling.java:6: error: cannot find symbol
+import net.minecraft.class_1297;
+                    ^
+  symbol:   class class_1297
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/EntityCulling.java:7: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/EntityCulling.java:17: error: cannot find symbol
+    public static boolean shouldRender(class_1297 entity) {
+                                       ^
+  symbol:   class class_1297
+  location: class EntityCulling
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/FastRenderModule.java:4: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/FastRenderModule.java:5: error: cannot find symbol
+import net.minecraft.class_4063;
+                    ^
+  symbol:   class class_4063
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/AnimationThrottle.java:5: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/BackgroundTickThrottler.java:4: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/ChunkLoadManager.java:5: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/HudOverlayManager.java:4: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/LODManager.java:6: error: cannot find symbol
+import net.minecraft.class_1297;
+                    ^
+  symbol:   class class_1297
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/LODManager.java:7: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/LODManager.java:32: error: cannot find symbol
+    public static boolean shouldSimplifyEntity(class_1297 entity) {
+                                               ^
+  symbol:   class class_1297
+  location: class LODManager
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/SceneSimplifier.java:5: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/SceneSimplifier.java:6: error: cannot find symbol
+import net.minecraft.class_5365;
+                    ^
+  symbol:   class class_5365
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/SoundBudgetManager.java:5: error: cannot find symbol
+import net.minecraft.class_1113;
+                    ^
+  symbol:   class class_1113
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/SoundBudgetManager.java:6: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/SoundBudgetManager.java:10: error: cannot find symbol
+    public static boolean shouldSkipSound(class_1113 sound) {
+                                          ^
+  symbol:   class class_1113
+  location: class SoundBudgetManager
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/TelemetryManager.java:6: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/TextureStreamingManager.java:6: error: cannot find symbol
+import net.minecraft.class_310;
+                    ^
+  symbol:   class class_310
+  location: package net.minecraft
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:13: error: cannot find symbol
+@Mixin(class_897.class)
+       ^
+  symbol: class class_897
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:15: error: cannot find symbol
+@Mixin(class_702.class)
+       ^
+  symbol: class class_702
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/CloudMixin.java:11: error: cannot find symbol
+@Mixin(class_315.class)
+       ^
+  symbol: class class_315
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/LightUpdateMixin.java:10: error: cannot find symbol
+@Mixin(class_3568.class)
+       ^
+  symbol: class class_3568
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:14: error: cannot find symbol
+@Mixin(class_329.class)
+       ^
+  symbol: class class_329
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/SpriteContentsMixin.java:13: error: cannot find symbol
+@Mixin(class_1059.class)
+       ^
+  symbol: class class_1059
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ChunkRenderMixin.java:9: error: cannot find symbol
+@Mixin(class_846.class)
+       ^
+  symbol: class class_846
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiZoomMixin.java:13: error: cannot find symbol
+@Mixin(class_757.class)
+       ^
+  symbol: class class_757
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiPlayerMixin.java:10: error: cannot find symbol
+@Mixin(class_1297.class)
+       ^
+  symbol: class class_1297
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:18: error: cannot find symbol
+        class_310 client = class_310.method_1551();
+        ^
+  symbol:   class class_310
+  location: class EntityRendererMixin<T>
+  where T is a type-variable:
+    T declared in class EntityRendererMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:18: error: cannot find symbol
+        class_310 client = class_310.method_1551();
+                           ^
+  symbol:   variable class_310
+  location: class EntityRendererMixin<T>
+  where T is a type-variable:
+    T declared in class EntityRendererMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/CloudMixin.java:16: error: cannot find symbol
+            cir.setReturnValue(class_4063.field_18163);
+                               ^
+  symbol:   variable class_4063
+  location: class CloudMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:19: error: cannot find symbol
+        class_310 client = class_310.method_1551();
+        ^
+  symbol:   class class_310
+  location: class HudMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:19: error: cannot find symbol
+        class_310 client = class_310.method_1551();
+                           ^
+  symbol:   variable class_310
+  location: class HudMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/SpriteContentsMixin.java:20: error: cannot find symbol
+        class_310 client = class_310.method_1551();
+        ^
+  symbol:   class class_310
+  location: class SpriteContentsMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/SpriteContentsMixin.java:20: error: cannot find symbol
+        class_310 client = class_310.method_1551();
+                           ^
+  symbol:   variable class_310
+  location: class SpriteContentsMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiPlayerMixin.java:23: error: cannot find symbol
+        if ((Object) this instanceof class_746) {
+                                     ^
+  symbol:   class class_746
+  location: class OptiPlayerMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiPlayerMixin.java:40: error: cannot find symbol
+        if ((Object) this instanceof class_746) {
+                                     ^
+  symbol:   class class_746
+  location: class OptiPlayerMixin
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:23: error: cannot find symbol
+        zoomKey = KeyBindingHelper.registerKeyBinding(new class_304(
+                                                          ^
+  symbol:   class class_304
+  location: class OptimobileClient
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:25: error: package class_3675 does not exist
+                class_3675.class_307.field_1668,
+                          ^
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:27: error: package class_304 does not exist
+                class_304.class_11900.field_62556 // <--- Ez itt a belső Enum hivatkozás
+                         ^
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/monitor/FpsMonitor.java:12: error: cannot find symbol
+        currentFPS = class_310.method_1551().method_47599();
+                     ^
+  symbol:   variable class_310
+  location: class FpsMonitor
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/hook/ClientHooks.java:11: error: cannot find symbol
+        OptiClientTickEvents.tick(class_310.method_1551());
+                                  ^
+  symbol:   variable class_310
+  location: class ClientHooks
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:19: error: cannot find symbol
+        return class_2561.method_43469(key, class_2561.method_43471(value ? "gui.optimobileplusz.enabled" : "gui.optimobileplusz.disabled"));
+               ^
+  symbol:   variable class_2561
+  location: class OptiMobileConfigScreen
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:19: error: cannot find symbol
+        return class_2561.method_43469(key, class_2561.method_43471(value ? "gui.optimobileplusz.enabled" : "gui.optimobileplusz.disabled"));
+                                            ^
+  symbol:   variable class_2561
+  location: class OptiMobileConfigScreen
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:23: error: cannot find symbol
+        return class_2561.method_43469("gui.optimobileplusz.currentMode", class_2561.method_43471("gui.optimobileplusz.state." + OptiCore.getState().name()));
+               ^
+  symbol:   variable class_2561
+  location: class OptiMobileConfigScreen
+/data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:23: error: cannot find symbol
+        return class_2561.method_43469("gui.optimobileplusz.currentMode", class_2561.method_43471("gui.optimobileplusz.state." + OptiCore.getState().name()));
+                                                                          ^
+  symbol:   variable class_2561
+  location: class OptiMobileConfigScreen
+100 errors
+
+> Task :compileJava FAILED
+
+[Incubating] Problems report is available at: file:///data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:4: error: cannot find symbol
+  import net.minecraft.class_1297;
+                      ^
+    symbol:   class class_1297
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:5: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:6: error: cannot find symbol
+  import net.minecraft.class_4604;
+                      ^
+    symbol:   class class_4604
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:7: error: cannot find symbol
+  import net.minecraft.class_897;
+                      ^
+    symbol:   class class_897
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:17: error: cannot find symbol
+      private void onShouldRender(T entity, class_4604 frustum, double x, double y, double z, CallbackInfoReturnable<Boolean> cir) {
+                                            ^
+    symbol:   class class_4604
+    location: class EntityRendererMixin<T>
+    where T is a type-variable:
+      T declared in class EntityRendererMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:11: error: cannot find symbol
+  import net.minecraft.class_2394;
+                      ^
+    symbol:   class class_2394
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:12: error: cannot find symbol
+  import net.minecraft.class_702;
+                      ^
+    symbol:   class class_702
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:13: error: cannot find symbol
+  import net.minecraft.class_703;
+                      ^
+    symbol:   class class_703
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:20: error: cannot find symbol
+      private void handleParticles(class_2394 parameters, double x, double y, double z, double velocityX, double velocityY, double velocityZ, CallbackInfoReturnable<class_703> cir) {
+                                   ^
+    symbol:   class class_2394
+    location: class ParticleMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:20: error: cannot find symbol
+      private void handleParticles(class_2394 parameters, double x, double y, double z, double velocityX, double velocityY, double velocityZ, CallbackInfoReturnable<class_703> cir) {
+                                                                                                                                                                     ^
+    symbol:   class class_703
+    location: class ParticleMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/CloudMixin.java:4: error: cannot find symbol
+  import net.minecraft.class_315;
+                      ^
+    symbol:   class class_315
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/CloudMixin.java:5: error: cannot find symbol
+  import net.minecraft.class_4063;
+                      ^
+    symbol:   class class_4063
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/CloudMixin.java:14: error: cannot find symbol
+      private void checkCloudConfig(CallbackInfoReturnable<class_4063> cir) {
+                                                           ^
+    symbol:   class class_4063
+    location: class CloudMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/LightUpdateMixin.java:4: error: cannot find symbol
+  import net.minecraft.class_3568;
+                      ^
+    symbol:   class class_3568
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:5: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:6: error: cannot find symbol
+  import net.minecraft.class_329;
+                      ^
+    symbol:   class class_329
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:7: error: cannot find symbol
+  import net.minecraft.class_332;
+                      ^
+    symbol:   class class_332
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:8: error: cannot find symbol
+  import net.minecraft.class_9779;
+                      ^
+    symbol:   class class_9779
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:18: error: cannot find symbol
+      private void onRender(class_332 context, class_9779 tickCounter, CallbackInfo ci) {
+                            ^
+    symbol:   class class_332
+    location: class HudMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:18: error: cannot find symbol
+      private void onRender(class_332 context, class_9779 tickCounter, CallbackInfo ci) {
+                                               ^
+    symbol:   class class_9779
+    location: class HudMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:56: error: cannot find symbol
+      private void drawPixelNum(class_332 context, int num, int x, int y, int color) {
+                                ^
+    symbol:   class class_332
+    location: class HudMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:82: error: cannot find symbol
+      private void drawCharFPS(class_332 context, int x, int y) {
+                               ^
+    symbol:   class class_332
+    location: class HudMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/SpriteContentsMixin.java:6: error: cannot find symbol
+  import net.minecraft.class_1059;
+                      ^
+    symbol:   class class_1059
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/SpriteContentsMixin.java:7: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ChunkRenderMixin.java:3: error: cannot find symbol
+  import net.minecraft.class_846;
+                      ^
+    symbol:   class class_846
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiZoomMixin.java:5: error: cannot find symbol
+  import net.minecraft.class_757;
+                      ^
+    symbol:   class class_757
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiPlayerMixin.java:4: error: cannot find symbol
+  import net.minecraft.class_1297;
+                      ^
+    symbol:   class class_1297
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiPlayerMixin.java:5: error: cannot find symbol
+  import net.minecraft.class_746;
+                      ^
+    symbol:   class class_746
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:8: error: cannot find symbol
+  import net.minecraft.class_304;
+                      ^
+    symbol:   class class_304
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:9: error: cannot find symbol
+  import net.minecraft.class_3675;
+                      ^
+    symbol:   class class_3675
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:14: error: cannot find symbol
+      public static class_304 zoomKey;
+                    ^
+    symbol:   class class_304
+    location: class OptimobileClient
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/event/OptiClientTickEvents.java:7: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/event/OptiClientTickEvents.java:16: error: cannot find symbol
+      public static void tick(class_310 client) {
+                              ^
+    symbol:   class class_310
+    location: class OptiClientTickEvents
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/monitor/FpsMonitor.java:3: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/hook/ClientHooks.java:4: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:5: error: cannot find symbol
+  import net.minecraft.class_2561;
+                      ^
+    symbol:   class class_2561
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:6: error: cannot find symbol
+  import net.minecraft.class_332;
+                      ^
+    symbol:   class class_332
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:7: error: cannot find symbol
+  import net.minecraft.class_4185;
+                      ^
+    symbol:   class class_4185
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:8: error: cannot find symbol
+  import net.minecraft.class_437;
+                      ^
+    symbol:   class class_437
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:11: error: cannot find symbol
+      private final class_437 parent;
+                    ^
+    symbol:   class class_437
+    location: class OptiMobileConfigScreen
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:13: error: cannot find symbol
+      public OptiMobileConfigScreen(class_437 parent) {
+                                    ^
+    symbol:   class class_437
+    location: class OptiMobileConfigScreen
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:18: error: cannot find symbol
+      private class_2561 label(String key, boolean value) {
+              ^
+    symbol:   class class_2561
+    location: class OptiMobileConfigScreen
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:22: error: cannot find symbol
+      private class_2561 stateLabel() {
+              ^
+    symbol:   class class_2561
+    location: class OptiMobileConfigScreen
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:206: error: cannot find symbol
+      public void method_25394(class_332 context, int mouseX, int mouseY, float delta) {
+                               ^
+    symbol:   class class_332
+    location: class OptiMobileConfigScreen
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptiMobileModMenu.java:9: error: cannot find symbol
+      public ConfigScreenFactory<?> getModConfigScreenFactory() {
+             ^
+    symbol:   class ConfigScreenFactory
+    location: class OptiMobileModMenu
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/ZoomState.java:3: error: cannot find symbol
+  import net.minecraft.class_3532;
+                      ^
+    symbol:   class class_3532
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/core/OptiCore.java:15: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/RenderThrottle.java:4: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/RenderThrottle.java:5: error: cannot find symbol
+  import net.minecraft.class_315;
+                      ^
+    symbol:   class class_315
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/EntityCulling.java:6: error: cannot find symbol
+  import net.minecraft.class_1297;
+                      ^
+    symbol:   class class_1297
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/EntityCulling.java:7: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/EntityCulling.java:17: error: cannot find symbol
+      public static boolean shouldRender(class_1297 entity) {
+                                         ^
+    symbol:   class class_1297
+    location: class EntityCulling
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/FastRenderModule.java:4: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/FastRenderModule.java:5: error: cannot find symbol
+  import net.minecraft.class_4063;
+                      ^
+    symbol:   class class_4063
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/AnimationThrottle.java:5: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/BackgroundTickThrottler.java:4: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/ChunkLoadManager.java:5: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/HudOverlayManager.java:4: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/LODManager.java:6: error: cannot find symbol
+  import net.minecraft.class_1297;
+                      ^
+    symbol:   class class_1297
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/LODManager.java:7: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/LODManager.java:32: error: cannot find symbol
+      public static boolean shouldSimplifyEntity(class_1297 entity) {
+                                                 ^
+    symbol:   class class_1297
+    location: class LODManager
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/SceneSimplifier.java:5: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/SceneSimplifier.java:6: error: cannot find symbol
+  import net.minecraft.class_5365;
+                      ^
+    symbol:   class class_5365
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/SoundBudgetManager.java:5: error: cannot find symbol
+  import net.minecraft.class_1113;
+                      ^
+    symbol:   class class_1113
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/SoundBudgetManager.java:6: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/SoundBudgetManager.java:10: error: cannot find symbol
+      public static boolean shouldSkipSound(class_1113 sound) {
+                                            ^
+    symbol:   class class_1113
+    location: class SoundBudgetManager
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/TelemetryManager.java:6: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/module/TextureStreamingManager.java:6: error: cannot find symbol
+  import net.minecraft.class_310;
+                      ^
+    symbol:   class class_310
+    location: package net.minecraft
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:18: error: cannot find symbol
+          class_310 client = class_310.method_1551();
+          ^
+    symbol:   class class_310
+    location: class EntityRendererMixin<T>
+    where T is a type-variable:
+      T declared in class EntityRendererMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:18: error: cannot find symbol
+          class_310 client = class_310.method_1551();
+                             ^
+    symbol:   variable class_310
+    location: class EntityRendererMixin<T>
+    where T is a type-variable:
+      T declared in class EntityRendererMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/CloudMixin.java:16: error: cannot find symbol
+              cir.setReturnValue(class_4063.field_18163);
+                                 ^
+    symbol:   variable class_4063
+    location: class CloudMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:19: error: cannot find symbol
+          class_310 client = class_310.method_1551();
+          ^
+    symbol:   class class_310
+    location: class HudMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:19: error: cannot find symbol
+          class_310 client = class_310.method_1551();
+                             ^
+    symbol:   variable class_310
+    location: class HudMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/SpriteContentsMixin.java:20: error: cannot find symbol
+          class_310 client = class_310.method_1551();
+          ^
+    symbol:   class class_310
+    location: class SpriteContentsMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/SpriteContentsMixin.java:20: error: cannot find symbol
+          class_310 client = class_310.method_1551();
+                             ^
+    symbol:   variable class_310
+    location: class SpriteContentsMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiPlayerMixin.java:23: error: cannot find symbol
+          if ((Object) this instanceof class_746) {
+                                       ^
+    symbol:   class class_746
+    location: class OptiPlayerMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiPlayerMixin.java:40: error: cannot find symbol
+          if ((Object) this instanceof class_746) {
+                                       ^
+    symbol:   class class_746
+    location: class OptiPlayerMixin
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:23: error: cannot find symbol
+          zoomKey = KeyBindingHelper.registerKeyBinding(new class_304(
+                                                            ^
+    symbol:   class class_304
+    location: class OptimobileClient
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/monitor/FpsMonitor.java:12: error: cannot find symbol
+          currentFPS = class_310.method_1551().method_47599();
+                       ^
+    symbol:   variable class_310
+    location: class FpsMonitor
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/hook/ClientHooks.java:11: error: cannot find symbol
+          OptiClientTickEvents.tick(class_310.method_1551());
+                                    ^
+    symbol:   variable class_310
+    location: class ClientHooks
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:19: error: cannot find symbol
+          return class_2561.method_43469(key, class_2561.method_43471(value ? "gui.optimobileplusz.enabled" : "gui.optimobileplusz.disabled"));
+                 ^
+    symbol:   variable class_2561
+    location: class OptiMobileConfigScreen
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:19: error: cannot find symbol
+          return class_2561.method_43469(key, class_2561.method_43471(value ? "gui.optimobileplusz.enabled" : "gui.optimobileplusz.disabled"));
+                                              ^
+    symbol:   variable class_2561
+    location: class OptiMobileConfigScreen
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:23: error: cannot find symbol
+          return class_2561.method_43469("gui.optimobileplusz.currentMode", class_2561.method_43471("gui.optimobileplusz.state." + OptiCore.getState().name()));
+                 ^
+    symbol:   variable class_2561
+    location: class OptiMobileConfigScreen
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:23: error: cannot find symbol
+          return class_2561.method_43469("gui.optimobileplusz.currentMode", class_2561.method_43471("gui.optimobileplusz.state." + OptiCore.getState().name()));
+                                                                            ^
+    symbol:   variable class_2561
+    location: class OptiMobileConfigScreen
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:14: error: cannot find symbol
+  public abstract class EntityRendererMixin<T extends class_1297> {
+                                                      ^
+    symbol: class class_1297
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/gui/OptiMobileConfigScreen.java:10: error: cannot find symbol
+  public class OptiMobileConfigScreen extends class_437 {
+                                              ^
+    symbol: class class_437
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptiMobileModMenu.java:7: error: cannot find symbol
+  public class OptiMobileModMenu implements ModMenuApi {
+                                            ^
+    symbol: class ModMenuApi
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/EntityRendererMixin.java:13: error: cannot find symbol
+  @Mixin(class_897.class)
+         ^
+    symbol: class class_897
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ParticleMixin.java:15: error: cannot find symbol
+  @Mixin(class_702.class)
+         ^
+    symbol: class class_702
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/CloudMixin.java:11: error: cannot find symbol
+  @Mixin(class_315.class)
+         ^
+    symbol: class class_315
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/LightUpdateMixin.java:10: error: cannot find symbol
+  @Mixin(class_3568.class)
+         ^
+    symbol: class class_3568
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/HudMixin.java:14: error: cannot find symbol
+  @Mixin(class_329.class)
+         ^
+    symbol: class class_329
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/SpriteContentsMixin.java:13: error: cannot find symbol
+  @Mixin(class_1059.class)
+         ^
+    symbol: class class_1059
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/ChunkRenderMixin.java:9: error: cannot find symbol
+  @Mixin(class_846.class)
+         ^
+    symbol: class class_846
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiZoomMixin.java:13: error: cannot find symbol
+  @Mixin(class_757.class)
+         ^
+    symbol: class class_757
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/mixin/OptiPlayerMixin.java:10: error: cannot find symbol
+  @Mixin(class_1297.class)
+         ^
+    symbol: class class_1297
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptiMobileModMenu.java:4: error: package com.terraformersmc.modmenu.api does not exist
+  import com.terraformersmc.modmenu.api.ConfigScreenFactory;
+                                       ^
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptiMobileModMenu.java:5: error: package com.terraformersmc.modmenu.api does not exist
+  import com.terraformersmc.modmenu.api.ModMenuApi;
+                                       ^
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:25: error: package class_3675 does not exist
+                  class_3675.class_307.field_1668,
+                            ^
+  /data/data/com.termux/files/home/FabricMods/OptiMobilePlusz/src/main/java/com/optimobileplusz/client/OptimobileClient.java:27: error: package class_304 does not exist
+                  class_304.class_11900.field_62556 // <--- Ez itt a belső Enum hivatkozás
+                           ^
+  100 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 15s
+1 actionable task: 1 executed

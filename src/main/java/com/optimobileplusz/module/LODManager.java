@@ -3,8 +3,8 @@ package com.optimobileplusz.module;
 import com.optimobileplusz.client.monitor.FpsMonitor;
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.Entity;
+import net.minecraft.Entity;
+import net.minecraft.Minecraft;
 
 public class LODManager {
 
@@ -13,8 +13,8 @@ public class LODManager {
             return;
         }
 
-        Minecraft client = Minecraft.getInstance();
-        if (client == null || client.world == null) {
+        Minecraft client = Minecraft.method_1551();
+        if (client == null || client.field_1687 == null) {
             return;
         }
 
@@ -26,7 +26,7 @@ public class LODManager {
             scale = 0.8;
         }
 
-        client.options.getEntityDistanceScaling().setValue(Math.max(4.0, 10.0 * scale));
+        client.field_1690.method_42517().method_41748(Math.max(4.0, 10.0 * scale));
     }
 
     public static boolean shouldSimplifyEntity(Entity entity) {
@@ -34,12 +34,12 @@ public class LODManager {
             return false;
         }
 
-        Minecraft client = Minecraft.getInstance();
-        if (client == null || client.player == null) {
+        Minecraft client = Minecraft.method_1551();
+        if (client == null || client.field_1724 == null) {
             return false;
         }
 
-        double distance = client.player.squaredDistanceTo(entity.getX(), entity.getY(), entity.getZ());
+        double distance = client.field_1724.method_5649(entity.method_23317(), entity.method_23318(), entity.method_23321());
         return distance > 64.0 * 64.0;
     }
 }

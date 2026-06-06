@@ -4,8 +4,8 @@ import com.optimobileplusz.client.OptimobileClient;
 import com.optimobileplusz.client.ZoomState;
 import com.optimobileplusz.client.monitor.FpsMonitor;
 import com.optimobileplusz.module.BackgroundTickThrottler;
+import net.minecraft.Minecraft;
 import com.optimobileplusz.core.OptiCore;
-import net.minecraft.client.MinecraftClient;
 
 public class OptiClientTickEvents {
 
@@ -13,9 +13,9 @@ public class OptiClientTickEvents {
      * Ezt a metódust hívja meg a rendszer minden egyes kliens-oldali tick végén.
      * Itt frissítjük a mérőket és futtatjuk az optimalizációt.
      */
-    public static void tick(MinecraftClient client) {
+    public static void tick(Minecraft client) {
         // Ha a játékos nincs bent egy világban (pl. főmenüben van), ne csináljunk semmit
-        if (client.getWorld() == null) {
+        if (client.field_1687 == null) {
             return;
         }
 
@@ -28,17 +28,15 @@ public class OptiClientTickEvents {
         }
 
         // 3. Kliens oldali zoom állapot frissítése
-        boolean isZooming = OptimobileClient.zoomKey != null && OptimobileClient.zoomKey.isPressed();
+        boolean isZooming = OptimobileClient.zoomKey != null && OptimobileClient.zoomKey.method_1434();
         ZoomState.tickZoom(isZooming);
     }
 
     /**
-     * Regisztrálja az eseménykezelőt a Fabric API-n keresztül a 26.1.x szabvány szerint.
+     * Regisztrálja az eseménykezelőt a Fabric API-n keresztül.
      */
     public static void register() {
-        // JAVÍTVA: END_CLIENT_TICK helyett az új 26.1.x kompatibilis END_WORLD_TICK-et használjuk a MinecraftClient példánnyal
-        net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.END_WORLD_TICK.register(world -> {
-            MinecraftClient client = MinecraftClient.getInstance();
+        net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.END_CLIENT_TICK.register(client -> {
             tick(client);
         });
     }

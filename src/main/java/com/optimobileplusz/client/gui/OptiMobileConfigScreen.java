@@ -2,179 +2,179 @@ package com.optimobileplusz.client.gui;
 
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptiCore;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.text.Text;
+import net.minecraft.class_2561;
+import net.minecraft.class_332;
+import net.minecraft.class_4185;
+import net.minecraft.class_437;
 
-public class OptiMobileConfigScreen extends Screen {
-    private final Screen parent;
+public class OptiMobileConfigScreen extends class_437 {
+    private final class_437 parent;
 
-    public OptiMobileConfigScreen(Screen parent) {
-        super(Text.translatable("gui.optimobileplusz.title"));
+    public OptiMobileConfigScreen(class_437 parent) {
+        super(class_2561.method_43471("gui.optimobileplusz.title"));
         this.parent = parent;
     }
 
-    private Text label(String key, boolean value) {
-        return Text.translatable(key, Text.translatable(value ? "gui.optimobileplusz.enabled" : "gui.optimobileplusz.disabled"));
+    private class_2561 label(String key, boolean value) {
+        return class_2561.method_43469(key, class_2561.method_43471(value ? "gui.optimobileplusz.enabled" : "gui.optimobileplusz.disabled"));
     }
 
-    private Text stateLabel() {
-        return Text.translatable("gui.optimobileplusz.currentMode", Text.translatable("gui.optimobileplusz.state." + OptiCore.getState().name()));
+    private class_2561 stateLabel() {
+        return class_2561.method_43469("gui.optimobileplusz.currentMode", class_2561.method_43471("gui.optimobileplusz.state." + OptiCore.getState().name()));
     }
 
     @Override
-    protected void init() {
-        int centerX = this.width / 2;
+    protected void method_25426() {
+        int centerX = this.field_22789 / 2;
         int leftX = centerX - 110;
         int rightX = centerX + 10;
         int y = 40;
 
-        Button stateButton = Button.builder(stateLabel(), button -> {})
-            .dimensions(centerX - 100, y, 200, 20)
-            .build();
-        stateButton.active = false;
-        this.addDrawableChild(stateButton);
+        class_4185 stateButton = class_4185.method_46430(stateLabel(), button -> {})
+            .method_46434(centerX - 100, y, 200, 20)
+            .method_46431();
+        stateButton.field_22763 = false;
+        this.method_37063(stateButton);
 
         y += 28;
-        Button generalLabel = Button.builder(Text.translatable("gui.optimobileplusz.section.general"), button -> {})
-            .dimensions(centerX - 100, y, 200, 20)
-            .build();
-        generalLabel.active = false;
-        this.addDrawableChild(generalLabel);
+        class_4185 generalLabel = class_4185.method_46430(class_2561.method_43471("gui.optimobileplusz.section.general"), button -> {})
+            .method_46434(centerX - 100, y, 200, 20)
+            .method_46431();
+        generalLabel.field_22763 = false;
+        this.method_37063(generalLabel);
 
         y += 24;
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.fastClouds", OptiMobileConfig.fastClouds), button -> {
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.fastClouds", OptiMobileConfig.fastClouds), button -> {
                 OptiMobileConfig.fastClouds = !OptiMobileConfig.fastClouds;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.fastClouds", OptiMobileConfig.fastClouds));
+                button.method_25355(label("gui.optimobileplusz.fastClouds", OptiMobileConfig.fastClouds));
             })
-            .dimensions(centerX - 100, y, 200, 20)
-            .build());
+            .method_46434(centerX - 100, y, 200, 20)
+            .method_46431());
 
         y += 24;
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.particles", OptiMobileConfig.particlesEnabled), button -> {
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.particles", OptiMobileConfig.particlesEnabled), button -> {
                 OptiMobileConfig.particlesEnabled = !OptiMobileConfig.particlesEnabled;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.particles", OptiMobileConfig.particlesEnabled));
+                button.method_25355(label("gui.optimobileplusz.particles", OptiMobileConfig.particlesEnabled));
             })
-            .dimensions(centerX - 100, y, 200, 20)
-            .build());
+            .method_46434(centerX - 100, y, 200, 20)
+            .method_46431());
 
         y += 28;
-        Button advancedLabel = Button.builder(Text.translatable("gui.optimobileplusz.section.advanced"), button -> {})
-            .dimensions(centerX - 100, y, 200, 20)
-            .build();
-        advancedLabel.active = false;
-        this.addDrawableChild(advancedLabel);
+        class_4185 advancedLabel = class_4185.method_46430(class_2561.method_43471("gui.optimobileplusz.section.advanced"), button -> {})
+            .method_46434(centerX - 100, y, 200, 20)
+            .method_46431();
+        advancedLabel.field_22763 = false;
+        this.method_37063(advancedLabel);
 
         y += 24;
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.frameBudget", OptiMobileConfig.frameBudgetEnabled), button -> {
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.frameBudget", OptiMobileConfig.frameBudgetEnabled), button -> {
                 OptiMobileConfig.frameBudgetEnabled = !OptiMobileConfig.frameBudgetEnabled;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.frameBudget", OptiMobileConfig.frameBudgetEnabled));
+                button.method_25355(label("gui.optimobileplusz.frameBudget", OptiMobileConfig.frameBudgetEnabled));
             })
-            .dimensions(leftX, y, 100, 20)
-            .build());
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.entityCulling", OptiMobileConfig.smartEntityCulling), button -> {
+            .method_46434(leftX, y, 100, 20)
+            .method_46431());
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.entityCulling", OptiMobileConfig.smartEntityCulling), button -> {
                 OptiMobileConfig.smartEntityCulling = !OptiMobileConfig.smartEntityCulling;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.entityCulling", OptiMobileConfig.smartEntityCulling));
+                button.method_25355(label("gui.optimobileplusz.entityCulling", OptiMobileConfig.smartEntityCulling));
             })
-            .dimensions(rightX, y, 100, 20)
-            .build());
+            .method_46434(rightX, y, 100, 20)
+            .method_46431());
 
         y += 24;
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.animationThrottle", OptiMobileConfig.throttledAnimations), button -> {
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.animationThrottle", OptiMobileConfig.throttledAnimations), button -> {
                 OptiMobileConfig.throttledAnimations = !OptiMobileConfig.throttledAnimations;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.animationThrottle", OptiMobileConfig.throttledAnimations));
+                button.method_25355(label("gui.optimobileplusz.animationThrottle", OptiMobileConfig.throttledAnimations));
             })
-            .dimensions(leftX, y, 100, 20)
-            .build());
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.fpsCounter", OptiMobileConfig.showFps), button -> {
+            .method_46434(leftX, y, 100, 20)
+            .method_46431());
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.fpsCounter", OptiMobileConfig.showFps), button -> {
                 OptiMobileConfig.showFps = !OptiMobileConfig.showFps;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.fpsCounter", OptiMobileConfig.showFps));
+                button.method_25355(label("gui.optimobileplusz.fpsCounter", OptiMobileConfig.showFps));
             })
-            .dimensions(rightX, y, 100, 20)
-            .build());
+            .method_46434(rightX, y, 100, 20)
+            .method_46431());
 
         y += 24;
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.adaptiveChunkLoading", OptiMobileConfig.adaptiveChunkLoadingEnabled), button -> {
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.adaptiveChunkLoading", OptiMobileConfig.adaptiveChunkLoadingEnabled), button -> {
                 OptiMobileConfig.adaptiveChunkLoadingEnabled = !OptiMobileConfig.adaptiveChunkLoadingEnabled;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.adaptiveChunkLoading", OptiMobileConfig.adaptiveChunkLoadingEnabled));
+                button.method_25355(label("gui.optimobileplusz.adaptiveChunkLoading", OptiMobileConfig.adaptiveChunkLoadingEnabled));
             })
-            .dimensions(leftX, y, 100, 20)
-            .build());
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.lod", OptiMobileConfig.lodEnabled), button -> {
+            .method_46434(leftX, y, 100, 20)
+            .method_46431());
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.lod", OptiMobileConfig.lodEnabled), button -> {
                 OptiMobileConfig.lodEnabled = !OptiMobileConfig.lodEnabled;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.lod", OptiMobileConfig.lodEnabled));
+                button.method_25355(label("gui.optimobileplusz.lod", OptiMobileConfig.lodEnabled));
             })
-            .dimensions(rightX, y, 100, 20)
-            .build());
+            .method_46434(rightX, y, 100, 20)
+            .method_46431());
 
         y += 24;
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.textureStreaming", OptiMobileConfig.asyncTextureStreamingEnabled), button -> {
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.textureStreaming", OptiMobileConfig.asyncTextureStreamingEnabled), button -> {
                 OptiMobileConfig.asyncTextureStreamingEnabled = !OptiMobileConfig.asyncTextureStreamingEnabled;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.textureStreaming", OptiMobileConfig.asyncTextureStreamingEnabled));
+                button.method_25355(label("gui.optimobileplusz.textureStreaming", OptiMobileConfig.asyncTextureStreamingEnabled));
             })
-            .dimensions(leftX, y, 100, 20)
-            .build());
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.sceneSimplifier", OptiMobileConfig.sceneSimplifierEnabled), button -> {
+            .method_46434(leftX, y, 100, 20)
+            .method_46431());
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.sceneSimplifier", OptiMobileConfig.sceneSimplifierEnabled), button -> {
                 OptiMobileConfig.sceneSimplifierEnabled = !OptiMobileConfig.sceneSimplifierEnabled;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.sceneSimplifier", OptiMobileConfig.sceneSimplifierEnabled));
+                button.method_25355(label("gui.optimobileplusz.sceneSimplifier", OptiMobileConfig.sceneSimplifierEnabled));
             })
-            .dimensions(rightX, y, 100, 20)
-            .build());
+            .method_46434(rightX, y, 100, 20)
+            .method_46431());
 
         y += 24;
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.gpuProfile", OptiMobileConfig.gpuProfileEnabled), button -> {
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.gpuProfile", OptiMobileConfig.gpuProfileEnabled), button -> {
                 OptiMobileConfig.gpuProfileEnabled = !OptiMobileConfig.gpuProfileEnabled;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.gpuProfile", OptiMobileConfig.gpuProfileEnabled));
+                button.method_25355(label("gui.optimobileplusz.gpuProfile", OptiMobileConfig.gpuProfileEnabled));
             })
-            .dimensions(leftX, y, 100, 20)
-            .build());
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.backgroundTickThrottle", OptiMobileConfig.backgroundTickThrottleEnabled), button -> {
+            .method_46434(leftX, y, 100, 20)
+            .method_46431());
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.backgroundTickThrottle", OptiMobileConfig.backgroundTickThrottleEnabled), button -> {
                 OptiMobileConfig.backgroundTickThrottleEnabled = !OptiMobileConfig.backgroundTickThrottleEnabled;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.backgroundTickThrottle", OptiMobileConfig.backgroundTickThrottleEnabled));
+                button.method_25355(label("gui.optimobileplusz.backgroundTickThrottle", OptiMobileConfig.backgroundTickThrottleEnabled));
             })
-            .dimensions(rightX, y, 100, 20)
-            .build());
+            .method_46434(rightX, y, 100, 20)
+            .method_46431());
 
         y += 24;
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.soundBudget", OptiMobileConfig.soundBudgetEnabled), button -> {
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.soundBudget", OptiMobileConfig.soundBudgetEnabled), button -> {
                 OptiMobileConfig.soundBudgetEnabled = !OptiMobileConfig.soundBudgetEnabled;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.soundBudget", OptiMobileConfig.soundBudgetEnabled));
+                button.method_25355(label("gui.optimobileplusz.soundBudget", OptiMobileConfig.soundBudgetEnabled));
             })
-            .dimensions(leftX, y, 100, 20)
-            .build());
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.telemetry", OptiMobileConfig.telemetryEnabled), button -> {
+            .method_46434(leftX, y, 100, 20)
+            .method_46431());
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.telemetry", OptiMobileConfig.telemetryEnabled), button -> {
                 OptiMobileConfig.telemetryEnabled = !OptiMobileConfig.telemetryEnabled;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.telemetry", OptiMobileConfig.telemetryEnabled));
+                button.method_25355(label("gui.optimobileplusz.telemetry", OptiMobileConfig.telemetryEnabled));
             })
-            .dimensions(rightX, y, 100, 20)
-            .build());
+            .method_46434(rightX, y, 100, 20)
+            .method_46431());
 
         y += 24;
-        this.addDrawableChild(Button.builder(label("gui.optimobileplusz.overlay", OptiMobileConfig.showDetailedOverlay), button -> {
+        this.method_37063(class_4185.method_46430(label("gui.optimobileplusz.overlay", OptiMobileConfig.showDetailedOverlay), button -> {
                 OptiMobileConfig.showDetailedOverlay = !OptiMobileConfig.showDetailedOverlay;
                 OptiMobileConfig.save();
-                button.setMessage(label("gui.optimobileplusz.overlay", OptiMobileConfig.showDetailedOverlay));
+                button.method_25355(label("gui.optimobileplusz.overlay", OptiMobileConfig.showDetailedOverlay));
             })
-            .dimensions(leftX, y, 100, 20)
-            .build());
+            .method_46434(leftX, y, 100, 20)
+            .method_46431());
 
         y += 28;
-        this.addDrawableChild(Button.builder(Text.translatable("gui.optimobileplusz.reset"), button -> {
+        this.method_37063(class_4185.method_46430(class_2561.method_43471("gui.optimobileplusz.reset"), button -> {
                 OptiMobileConfig.fastClouds = true;
                 OptiMobileConfig.particlesEnabled = false;
                 OptiMobileConfig.showFps = true;
@@ -191,22 +191,22 @@ public class OptiMobileConfigScreen extends Screen {
                 OptiMobileConfig.telemetryEnabled = false;
                 OptiMobileConfig.showDetailedOverlay = false;
                 OptiMobileConfig.save();
-                this.client.setScreen(new OptiMobileConfigScreen(this.parent));
+                this.field_22787.method_1507(new OptiMobileConfigScreen(this.parent));
             })
-            .dimensions(centerX - 100, y, 200, 20)
-            .build());
+            .method_46434(centerX - 100, y, 200, 20)
+            .method_46431());
 
-        this.addDrawableChild(Button.builder(Text.translatable("gui.optimobileplusz.done"), button -> {
-            this.client.setScreen(this.parent);
-        }).dimensions(centerX - 100, this.height - 40, 200, 20)
-        .build());
+        this.method_37063(class_4185.method_46430(class_2561.method_43471("gui.optimobileplusz.done"), button -> {
+            this.field_22787.method_1507(this.parent);
+        }).method_46434(centerX - 100, this.field_22790 - 40, 200, 20)
+        .method_46431());
     }
 
     @Override
-    public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float delta) {
-        this.extractBackground(context, mouseX, mouseY, delta);
-        context.centeredText(this.textRenderer, this.title, this.width / 2, 16, 0xFFFFFF);
-        context.centeredText(this.textRenderer, Text.translatable("gui.optimobileplusz.description"), this.width / 2, 30, 0xAAAAFF);
-        super.extractRenderState(context, mouseX, mouseY, delta);
+    public void method_25394(class_332 context, int mouseX, int mouseY, float delta) {
+        this.method_52752(context);
+        context.method_27534(this.field_22793, this.field_22785, this.field_22789 / 2, 16, 0xFFFFFF);
+        context.method_27534(this.field_22793, class_2561.method_43471("gui.optimobileplusz.description"), this.field_22789 / 2, 30, 0xAAAAFF);
+        super.method_25394(context, mouseX, mouseY, delta);
     }
 }

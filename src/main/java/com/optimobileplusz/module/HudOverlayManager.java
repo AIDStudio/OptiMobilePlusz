@@ -1,7 +1,7 @@
 package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
-import net.minecraft.client.Minecraft;
+import net.minecraft.Minecraft;
 
 public class HudOverlayManager {
 
@@ -10,12 +10,12 @@ public class HudOverlayManager {
     }
 
     public static String getOverlayText() {
-        Minecraft client = Minecraft.getInstance();
+        Minecraft client = Minecraft.method_1551();
         if (client == null) {
             return "";
         }
 
-        int fps = client.getCurrentFps();
+        int fps = client.method_47599();
         int particleRate = ParticleLimiter.getParticleMultiplier();
         boolean budget = FrameBudgetManager.isBudgetActive();
         return String.format("FPS: %d  Budget: %s  Particles: %d%%", fps, budget ? "ON" : "OFF", particleRate);

@@ -1,76 +1,28 @@
 plugins {
-	id 'fabric-loom' version "${loom_version}"
+	id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
 	id 'maven-publish'
 }
 
 version = project.mod_version
 group = project.maven_group
 
-// Itt adjuk meg a letöltési forrásokat
 repositories {
-    maven {
-        url = file("${project.projectDir}/libs/minecraft-local-repo").toURI()
-    }
-    maven {
-        url = uri("${gradle.gradleUserHomeDir}/caches/fabric-loom/minecraftMaven")
-        metadataSources {
-            artifact()
-            mavenPom()
-        }
-    }
-    maven {
-        url = uri("https://maven.terraformersmc.com/releases/")
-        metadataSources {
-            mavenPom()
-        }
-    } // ModMenu helye
-    maven {
-        url = uri("https://maven.fabricmc.net/")
-        metadataSources {
-            artifact()
-            mavenPom()
-        }
-    } // Fabric API helye
-    maven {
-        url = uri("https://repo.spongepowered.org/maven")
-        metadataSources {
-            artifact()
-            mavenPom()
-        }
-    } // Sponge Mixin repository
-    mavenCentral() // Általános Java könyvtárak
-}
-
-// Disable remapping of outputs (we rely on Mojang's official names for 26.1+)
-loom {
-    noIntermediateMappings()
-    dontRemapOutputs()
-    layered {
-        mappings(file("libs/official-mappings.jar")) {
-            mappingPath("mappings/mappings.tiny")
-            fallbackNamespaces("official", "named")
-        }
-    }
+	// Add repositories to retrieve artifacts from in here.
+	// You should only use this when depending on other mods because
+	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
+	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
+	// for more information about repositories.
 }
 
 dependencies {
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings files('libs/official-mappings.jar')
+	// To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    // For Minecraft 26.1+, Minecraft is unobfuscated — no intermediary/yarn mappings required.
-    // Use the new Loom (non-remapping) workflow: use standard configurations `implementation` / `compileOnly`.
-    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-    compileOnly "org.spongepowered:mixin:0.8.5"
-
-    // Mod Menu integráció (compile-time/runtime dependency)
-    implementation "com.terraformersmc:modmenu:11.0.1"
-}
-
-configurations {
-    compileClasspath {
-        extendsFrom configurations.minecraft
-    }
+	// Fabric API. This is technically optional, but you probably want it anyway.
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	
 }
 
 processResources {
@@ -83,25 +35,41 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    it.options.release = 25
+	it.options.release = 21
 }
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(25)
-    }
-    withSourcesJar()
-    sourceCompatibility = JavaVersion.toVersion(25)
-    targetCompatibility = JavaVersion.toVersion(25)
+	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+	// if it is present.
+	// If you remove this line, sources will not be generated.
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {
 	def projectName = project.name
 	inputs.property "projectName", projectName
 
-	
-
 	from("LICENSE") {
 		rename { "${it}_$projectName"}
+	}
+}
+
+// configure the maven publication
+publishing {
+	publications {
+		create("mavenJava", MavenPublication) {
+			from components.java
+		}
+	}
+
+	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+	repositories {
+		// Add repositories to publish to here.
+		// Notice: This block does NOT have the same function as the block in the top level.
+		// The repositories here will be used for publishing your artifact, not for
+		// retrieving dependencies.
 	}
 }

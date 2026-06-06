@@ -3,8 +3,7 @@ package com.optimobileplusz.module;
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.Log;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.Minecraft;
-
+import net.minecraft.Minecraft;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
@@ -21,14 +20,14 @@ public class TelemetryManager {
             return;
         }
 
-        Minecraft client = Minecraft.getInstance();
+        Minecraft client = Minecraft.method_1551();
         if (client == null) {
             return;
         }
 
         Properties prop = new Properties();
         prop.setProperty("timestamp", Instant.now().toString());
-        prop.setProperty("fps", String.valueOf(client.getCurrentFps()));
+        prop.setProperty("fps", String.valueOf(client.method_47599()));
         prop.setProperty("particles", String.valueOf(ParticleLimiter.getParticleMultiplier()));
         prop.setProperty("frameBudgetActive", String.valueOf(FrameBudgetManager.isBudgetActive()));
 

@@ -1,26 +1,26 @@
 package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.GraphicsPreset;
 import java.lang.reflect.Field;
+import net.minecraft.Minecraft;
+import net.minecraft.class_5365;
 
 public class SceneSimplifier {
 
     public static void update() {
         if (!OptiMobileConfig.sceneSimplifierEnabled) return;
 
-        Minecraft client = Minecraft.getInstance();
-        if (client == null || client.options == null) return;
+        Minecraft client = Minecraft.method_1551();
+        if (client == null || client.field_1690 == null) return;
 
-        GraphicsPreset target = OptiMobileConfig.frameBudgetEnabled ? GraphicsPreset.FAST : GraphicsPreset.FANCY;
+        class_5365 target = OptiMobileConfig.frameBudgetEnabled ? class_5365.field_25427 : class_5365.field_25428;
 
         try {
-            // Megkeressük a Options osztályban azt a mezőt, ami GraphicsPreset típusú
-            for (Field field : client.options.getClass().getFields()) {
-                if (field.getType() == GraphicsPreset.class) {
+            // Megkeressük a GameOptions osztályban azt a mezőt, ami GraphicsMode típusú
+            for (Field field : client.field_1690.getClass().getFields()) {
+                if (field.getType() == class_5365.class) {
                     // Megtaláltuk a mezőt (pl. graphicsMode vagy graphics), most beállítjuk
-                    field.set(client.options, target);
+                    field.set(client.field_1690, target);
                     return; // Kész vagyunk
                 }
             }

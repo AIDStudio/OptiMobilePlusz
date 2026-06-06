@@ -4,14 +4,14 @@ import com.optimobileplusz.client.event.OptiClientTickEvents;
 import com.optimobileplusz.core.Log;
 import com.optimobileplusz.core.OptiCore;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
-import net.minecraft.client.KeyMapping;
-import com.mojang.blaze3d.platform.InputConstants;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.minecraft.class_304;
+import net.minecraft.class_3675;
 import org.lwjgl.glfw.GLFW;
 
 public class OptimobileClient implements ClientModInitializer {
 
-    public static KeyMapping zoomKey;
+    public static class_304 zoomKey;
 
     @Override
     public void onInitializeClient() {
@@ -20,11 +20,11 @@ public class OptimobileClient implements ClientModInitializer {
         
         // Ez a megoldás: A KeyBinding.Category enum-on keresztül hivatkozunk a kategóriára.
         // Az 1.21.1-es Yarn mappingben ez a legbiztosabb módja a Category objektum átadásának.
-        zoomKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
+        zoomKey = KeyBindingHelper.registerKeyBinding(new class_304(
                 "key.optimobileplusz.zoom", 
-                InputConstants.Type.KEYSYM,
+                class_3675.class_307.field_1668,
                 GLFW.GLFW_KEY_C, 
-                KeyMapping.Category.MISC // <--- Ez itt a belső Enum hivatkozás
+                class_304.class_11900.field_62556 // <--- Ez itt a belső Enum hivatkozás
         ));
         
         OptiClientTickEvents.register();

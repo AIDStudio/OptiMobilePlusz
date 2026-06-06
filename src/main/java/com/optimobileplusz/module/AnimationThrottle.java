@@ -2,7 +2,7 @@ package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.client.Minecraft;
+import net.minecraft.Minecraft;
 
 public class AnimationThrottle {
 
@@ -11,12 +11,12 @@ public class AnimationThrottle {
             return false;
         }
 
-        Minecraft client = Minecraft.getInstance();
-        if (client == null || client.player == null || client.world == null) {
+        Minecraft client = Minecraft.method_1551();
+        if (client == null || client.field_1724 == null || client.field_1687 == null) {
             return false;
         }
 
-        long worldTime = client.world.getTime();
+        long worldTime = client.field_1687.method_75260();
 
         switch (state) {
             case EXTREME:

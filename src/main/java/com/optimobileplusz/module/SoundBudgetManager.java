@@ -2,12 +2,12 @@ package com.optimobileplusz.module;
 
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptimizationState;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.sound.SoundInstance;
+import net.minecraft.class_1113;
+import net.minecraft.Minecraft;
 
 public class SoundBudgetManager {
 
-    public static boolean shouldSkipSound(SoundInstance sound) {
+    public static boolean shouldSkipSound(class_1113 sound) {
         if (!OptiMobileConfig.soundBudgetEnabled) {
             return false;
         }
@@ -16,17 +16,17 @@ public class SoundBudgetManager {
             return false;
         }
 
-        if (sound.getCategory() != null && sound.getCategory().equals(net.minecraft.sound.SoundCategory.MASTER)) {
+        if (sound.method_4774() != null && sound.method_4774().equals(net.minecraft.class_3419.field_15250)) {
             return false;
         }
 
-        Minecraft client = Minecraft.getInstance();
-        if (client == null || client.player == null) {
+        Minecraft client = Minecraft.method_1551();
+        if (client == null || client.field_1724 == null) {
             return false;
         }
 
-        double volume = sound.getVolume();
-        double distance = client.player.squaredDistanceTo(sound.getX(), sound.getY(), sound.getZ());
+        double volume = sound.method_4781();
+        double distance = client.field_1724.method_5649(sound.method_4784(), sound.method_4779(), sound.method_4778());
         if (distance > 64.0 * 64.0 && volume < 0.7) {
             return true;
         }

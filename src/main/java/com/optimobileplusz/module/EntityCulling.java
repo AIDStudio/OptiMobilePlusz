@@ -3,8 +3,8 @@ package com.optimobileplusz.module;
 import com.optimobileplusz.config.OptiMobileConfig;
 import com.optimobileplusz.core.OptimizationState;
 import com.optimobileplusz.module.FrameBudgetManager;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.Entity;
+import net.minecraft.Entity;
+import net.minecraft.Minecraft;
 
 public class EntityCulling {
 
@@ -19,12 +19,12 @@ public class EntityCulling {
             return true;
         }
 
-        Minecraft client = Minecraft.getInstance();
-        if (client == null || client.player == null || entity == client.player) {
+        Minecraft client = Minecraft.method_1551();
+        if (client == null || client.field_1724 == null || entity == client.field_1724) {
             return true;
         }
 
-        double distanceSq = client.player.squaredDistanceTo(entity.getX(), entity.getY(), entity.getZ());
+        double distanceSq = client.field_1724.method_5649(entity.method_23317(), entity.method_23318(), entity.method_23321());
         double limit;
 
         switch (currentState) {

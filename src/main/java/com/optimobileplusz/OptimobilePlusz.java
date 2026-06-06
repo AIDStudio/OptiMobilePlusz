@@ -10,6 +10,6 @@ public class OptimobilePlusz implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        LOGGER.info("OptiMobilePlusz inicializalva (Common)!");
+        LOGGER.info("OptiElitePlusz inicializalva (Common)!");
     }
 }

@@ -1,12 +1,12 @@
 package com.optimobileplusz.client.mixin;
 
-import net.minecraft.client.render.chunk.ChunkBuilder;
+import net.minecraft.class_846;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(ChunkBuilder.class)
+@Mixin(class_846.class)
 public class ChunkRenderMixin {
 
     /**
