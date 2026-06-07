@@ -1,5 +1,7 @@
 [![CurseForge](https://img.shields.io/badge/CurseForge-Download-blue?logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/optymobileplusz)
 
+![Logo](https://raw.githubusercontent.com/AIDStudio/OptiMobilePlusz/refs/heads/main/pictures/logo.png)
+
 # ⚡ OptiElitePlusz (v1.3.1)
 
 ### 📢 IMPORTANT PROJECT NOTICE:
